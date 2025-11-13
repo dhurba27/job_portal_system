@@ -29,72 +29,8 @@ $result = $stmt->get_result();
 
 <head>
     <title>My Applications - Job Portal</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f2f5f7;
-            display: flex;
-            justify-content: center;
-        }
-
-        .container {
-            margin-top: 100px;
-            background: #fff;
-            border-radius: 10px;
-            width: 90%;
-            padding: 20px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .status {
-            font-weight: bold;
-        }
-
-        .Pending {
-            color: orange;
-        }
-
-        .Accepted {
-            color: green;
-        }
-
-        .Rejected {
-            color: red;
-        }
-
-        .title {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-
-        .info {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            text-align: center;
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .info:hover {
-            background-color: #ddddddff;
-            transition: 400ms;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/user/applications.css">
 </head>
 
 <body>

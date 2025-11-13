@@ -4,7 +4,7 @@
         }         */
 
 .search-container {
-    background-image: url("../../image/image1.jpg");
+    background-image: url("../../../image/image1.jpg");
     background-size: cover;
     background-position: bottom;
     height: 500px;

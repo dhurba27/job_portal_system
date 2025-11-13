@@ -21,75 +21,8 @@ $jobs_result = $jobs_query->get_result();
 
 <head>
     <title>Employer Dashboard - Job Portal</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f2f5f7;
-        }
-
-        .navbar {
-            background-color: #007BFF;
-            color: white;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar h2 {
-            margin: 0;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            background: #0056b3;
-            padding: 8px 15px;
-            border-radius: 5px;
-            margin-left: 10px;
-        }
-
-        .navbar a:hover {
-            background: #004080;
-        }
-
-        .container {
-            margin: 30px auto;
-            width: 90%;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        }
-
-        h2 {
-            color: #fff;
-            text-align: center;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-
-        th,
-        td {
-            border: 1px solid #ddd;
-            text-align: center;
-            padding: 10px;
-        }
-
-        th {
-            background: #007BFF;
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background: #f2f2f2;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/employer/employer_dashboard.css">
 </head>
 
 <body>

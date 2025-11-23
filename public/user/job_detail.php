@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>Document</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/user/job_detail.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/user/job_detail.css">
 </head>
 <body>
 

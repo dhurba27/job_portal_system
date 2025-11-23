@@ -3,8 +3,8 @@
 
 <head>
     <title>User Dashboard - Job Portal</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/user/user_dashboard.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/user/user_dashboard.css">
 </head>
 
 <body>

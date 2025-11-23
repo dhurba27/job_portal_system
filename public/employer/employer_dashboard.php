@@ -21,8 +21,8 @@ $jobs_result = $jobs_query->get_result();
 
 <head>
     <title>Employer Dashboard - Job Portal</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/employer/employer_dashboard.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/employer/employer_dashboard.css">
 </head>
 
 <body>

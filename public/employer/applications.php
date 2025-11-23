@@ -39,8 +39,8 @@ $app_result = $app_query->get_result();
 
 <head>
     <title>Applications - Employer Dashboard</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/employer/applications.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/employer/applications.css">
 </head>
 
 <body>

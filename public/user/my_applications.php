@@ -4,8 +4,8 @@
 
 <head>
     <title>My Applications - Job Portal</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/user/applications.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/user/applications.css">
 </head>
 
 <body>

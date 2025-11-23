@@ -10,6 +10,7 @@
     $email_check -> bind_param('s', $email);
     $email_check -> execute();
     $result = $email_check -> get_result();
+    $email_check -> close();
     if($result -> num_rows > 0) {
 
     }

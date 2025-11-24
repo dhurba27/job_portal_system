@@ -1,0 +1,65 @@
+/* body {
+            font-family: Arial, sans-serif;
+            background: #f2f5f7;
+        }         */
+
+.search-container {
+    background-image: url("../../image/image1.jpg");
+    background-size: cover;
+    background-position: bottom;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    width: 500px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.search-container button {
+    padding: 10px 15px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background: #0056b3;
+}
+
+/* Job Cards */
+.jobs-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 50px 0;
+}
+
+
+.job-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    line-height: 25px;
+}
+
+.job-card:hover {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    transition: 400ms;
+}

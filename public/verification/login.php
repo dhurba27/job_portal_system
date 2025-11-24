@@ -1,0 +1,37 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login - Job Portal</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../../css/verification/login.css">
+</head>
+
+<body>
+  <form id="login_form" action="../../backend_php/login.php" method="POST">
+    <h2 style="text-align: center;">LOGIN</h2>
+
+    <input type="email" id="email" name="email" placeholder="Email" value="<?php echo $_SESSION['email'] ?? '' ?>" required>
+    <div class="error" id="emailError">
+      <?php echo $_SESSION['email_error'] ?? '' ?>
+    </div>
+
+    <input type="password" id="password" name="password" placeholder="Password" required>
+    <div class="error" id="passwordError">
+      <?php echo $_SESSION['password_error'] ?? '' ?>
+    </div>
+
+    <button type="submit">Login</button>
+    <p>Don't have an account? <a href="signup.php">Sign up</a></p>
+
+    <?php 
+      unset($_SESSION['email_error']); 
+      unset($_SESSION['password_error']); 
+      unset($_SESSION['email']); 
+    ?>
+  </form>
+
+  <script src="../../js/login.js"></script>
+</body>
+</html>

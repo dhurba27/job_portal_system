@@ -4,6 +4,9 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
 
+    session_start();
+    $_SESSION['email'] = $email;
+
     $sql = $conn -> prepare('select * from users where email = ?');
     $sql -> bind_param('s', $email);
     $sql -> execute();
@@ -15,7 +18,15 @@
         if(password_verify($password, $value['password'])){
             header('Location: ../public/user/user_dashboard.php');
             exit();
+        } else {
+            $_SESSION['password_error'] = 'Incorrect Password';
+            header('Location: ../public/verification/login.php');
+            exit();
         }
+    } else {
+        $_SESSION['email_error'] = 'Incorrect Email';
+        header('Location: ../public/verification/login.php');
+        exit();
     }
     
 ?>

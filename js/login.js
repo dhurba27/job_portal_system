@@ -7,7 +7,7 @@ const password_error = document.getElementById('passwordError');
 form.addEventListener('submit', function(e){
     let valid = true;
 
-    const pattern = /^[^\s1@]+@[^\s@]+\.[^\s@]+$/;
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if(!pattern.test(email.value)){
         email_error.innerText = "Invalid Email";
         valid = false;

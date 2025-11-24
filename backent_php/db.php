@@ -2,8 +2,8 @@
 session_start();
 
 $host = "localhost";
-$user = "dhurba";
-$pass = "dhurba123";
+$user = "suman";
+$pass = "suman123";
 $dbname = "job_portal";
 
 $conn = new mysqli($host, $user, $pass, $dbname);

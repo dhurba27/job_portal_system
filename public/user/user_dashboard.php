@@ -12,7 +12,7 @@
     <?php include "navbar.php"; ?>
 
     <div class="search-container">
-        <h1 style="color: white;">Ready to Explore</h1>
+        <h1 style="color: white;">Take the next step in <br> your career journey.</h1>
         <form method="GET" action="">
             <input type="text" name="search" placeholder="Search for jobs..." value="">
             <button type="submit">Search</button>

@@ -1,5 +1,5 @@
 <?php
-include("../../api/db.php");
+include "../../backend/db.php";
 
 // Ensure admin is logged in
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {

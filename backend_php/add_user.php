@@ -4,7 +4,7 @@
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $user = $_POST['user_type'];
+    $user = $_POST['role'];
     
     session_start();
     $_SESSION['name'] = $name;

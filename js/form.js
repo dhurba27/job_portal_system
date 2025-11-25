@@ -5,7 +5,7 @@ const form = document.getElementById('form');
 const name_error = document.getElementById('nameError');
 const email_error = document.getElementById('emailError');
 const password_error = document.getElementById('passwordError');
-const user_type = document.getElementById('user_type');
+const role = document.getElementById('role');
 const selectError = document.getElementById('selectError');
 
 
@@ -33,8 +33,8 @@ form.addEventListener('submit', function(e){
         }
     }
 
-    if(user_type){
-        if(user_type.value == "null"){
+    if(role){
+        if(role.value == "null"){
             selectError.innerText = "select an option";
             valid = false;
         }

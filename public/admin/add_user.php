@@ -24,7 +24,7 @@
     <input type="password" id="password" name="password" placeholder="Password" required>
     <div class="error" id="passwordError"></div>
 
-    <select name="user_type" id="user_type">
+    <select name="role" id="role">
         <option value="null">Select User</option>
         <option value="admin">Admin</option>
         <option value="employer">Employer</option>

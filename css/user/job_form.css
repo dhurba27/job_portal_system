@@ -1,8 +1,4 @@
-
-
 body {
-    /* font-family: Arial, sans-serif;
-    background: #f2f5f7; */
     display: flex;
     justify-content: center;
 }
@@ -10,10 +6,11 @@ body {
 .container {
     width: 80%;
     background-color: white;
-    padding: 25px 20px;
+    padding: 36px;
     margin: 100px 0;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    border-radius: 28px;
+    box-shadow: 0 30px 65px rgba(15, 23, 42, 0.15);
     display: flex;
     gap: 20px;
     flex-direction: column;
@@ -32,12 +29,11 @@ form {
     width: 55%;
 }
 
-
-
 form input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 14px;
+    padding: 12px 16px;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    background: #f8fafc;
     outline: none;
     width: 100%;
 }
@@ -49,17 +45,19 @@ form input {
 }
 
 .name input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 14px;
+    padding: 12px 16px;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    background: #f8fafc;
     outline: none;
     width: 100%;
 }
 
 textarea {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 14px;
+    padding: 12px 16px;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    background: #f8fafc;
     outline: none;
     width: 100%;
 }

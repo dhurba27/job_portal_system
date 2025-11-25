@@ -3,15 +3,15 @@
 <html>
 
 <head>
-  <title>Signup - Job Portal</title>
+  <title>Job Portal</title>
   <link rel="stylesheet" href="../../css/styles.css">
   <link rel="stylesheet" href="../../css/form.css">
 </head>
 
 <body>
 
-  <form id="form" action="../../backend_php/signup.php" method="POST">
-    <h2 style="text-align: center;">SIGN UP</h2>
+  <form id="form" action="../../backend_php/add_user.php" method="POST">
+    <h2 style="text-align: center;">Create User</h2>
 
     <input type="text" id="name" name="name" placeholder="Full Name" value="<?php echo $_SESSION['name'] ?? '' ?>" required>
     <div class="error" id="nameError"></div>
@@ -23,9 +23,15 @@
     
     <input type="password" id="password" name="password" placeholder="Password" required>
     <div class="error" id="passwordError"></div>
+
+    <select name="user_type" id="user_type">
+        <option value="null">Select User</option>
+        <option value="admin">Admin</option>
+        <option value="employer">Employer</option>
+    </select>
+    <div class="error" id="selectError"></div>
     
-    <button type="submit">Sign Up</button>
-    <p>Already have an account? <a href="login.php">Login</a></p>
+    <button type="submit">Create</button>
 
     <?php 
       unset($_SESSION['email_error']); 

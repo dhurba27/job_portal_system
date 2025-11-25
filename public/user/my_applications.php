@@ -10,7 +10,7 @@
 
 <body>
 
-    <?php include "navbar.html"; ?>
+    <?php include "navbar.php"; ?>
 
     <div class="container">
         <h2>My Applications</h2>

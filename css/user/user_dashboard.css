@@ -1,13 +1,9 @@
-/* body {
-            font-family: Arial, sans-serif;
-            background: #f2f5f7;
-        }         */
-
 .search-container {
-    background-image: url("../../image/image1.jpg");
-    background-size: cover;
-    background-position: bottom;
-    height: 500px;
+    background-image: url("../../image/bg_image2.jpeg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 700px;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -15,25 +11,32 @@
     align-items: center;
 }
 
-.search-container input[type="text"] {
-    padding: 10px;
+.search-container h1{
+    font-size: 60px;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-container input {
     width: 500px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    font-size: 15px;
+    border-radius: 14px;
+    padding: 16px 24px;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    background: #f8fafc;
     outline: none;
 }
 
 .search-container button {
-    padding: 10px 15px;
-    background: #007BFF;
+    padding: 18px 18px;
+    border-radius: 14px;
+    background: #0d6efd;
     color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
 .search-container button:hover {
-    background: #0056b3;
+    background: rgb(11, 94, 215);
 }
 
 /* Job Cards */
@@ -49,8 +52,9 @@
 
 .job-card {
     background: white;
+    border: 1px solid #eee;
     border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
     padding: 10px 20px;
     width: 80%;
     display: flex;

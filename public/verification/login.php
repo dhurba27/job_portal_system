@@ -5,11 +5,11 @@
 <head>
   <title>Login - Job Portal</title>
   <link rel="stylesheet" href="../../css/styles.css">
-  <link rel="stylesheet" href="../../css/verification/login.css">
+  <link rel="stylesheet" href="../../css/form.css">
 </head>
 
 <body>
-  <form id="login_form" action="../../backend_php/login.php" method="POST">
+  <form id="form" action="../../backend_php/login.php" method="POST">
     <h2 style="text-align: center;">LOGIN</h2>
 
     <input type="email" id="email" name="email" placeholder="Email" value="<?php echo $_SESSION['email'] ?? '' ?>" required>
@@ -32,6 +32,6 @@
     ?>
   </form>
 
-  <script src="../../js/login.js"></script>
+  <script src="../../js/form.js"></script>
 </body>
 </html>

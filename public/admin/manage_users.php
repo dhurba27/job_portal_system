@@ -1,30 +1,8 @@
 <?php
-include("../../api/db.php");
-
-// Ensure admin is logged in
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
-    header("Location: ../index.html");
-    exit;
-}
-
-$message = "";
-
-// Delete user
-if (isset($_GET['delete_user'])) {
-    $user_id = intval($_GET['delete_user']);
-    $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
-    $stmt->bind_param("i", $user_id);
-    if ($stmt->execute()) {
-        $message = "<p class='success'> User deleted successfully.</p>";
-    } else {
-        $message = "<p class='error'> Failed to delete user.</p>";
-    }
-}
-
-// Fetch all users
-$users_stmt = $conn->prepare("SELECT * FROM users ORDER BY id DESC");
-$users_stmt->execute();
-$users_result = $users_stmt->get_result();
+include("../../backend_php/db.php");
+$sql = "select * from users";
+$result = mysqli_query($conn, $sql);
+$values = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -158,7 +136,6 @@ $users_result = $users_stmt->get_result();
     </div>
 
     <div class="container">
-        <?php if ($message) echo $message; ?>
 
         <h2>All Users</h2>
         <table>
@@ -166,23 +143,12 @@ $users_result = $users_stmt->get_result();
                 <th>Name</th>
                 <th>Email</th>
                 <th>Role</th>
-                <th>Action</th>
             </tr>
-            <?php if ($users_result->num_rows > 0) { ?>
-                <?php while ($user = $users_result->fetch_assoc()) { ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($user['name']); ?></td>
-                        <td><?php echo htmlspecialchars($user['email']); ?></td>
-                        <td><?php echo htmlspecialchars($user['role']); ?></td>
-                        <td>
-                            <a href="edit_user.php?id=<?php echo $user['id']; ?>" class="btn edit-btn">Edit</a>
-                            <a href="manage_users.php?delete_user=<?php echo $user['id']; ?>" class="btn delete-btn" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
-                        </td>
-                    </tr>
-                <?php } ?>
-            <?php } else { ?>
+            <?php foreach($values as $value) { ?>
                 <tr>
-                    <td colspan="4" class="no-data">No users found.</td>
+                    <td><?php echo htmlspecialchars($value['name']); ?></td>
+                    <td><?php echo htmlspecialchars($value['email']); ?></td>
+                    <td><?php echo htmlspecialchars($value['role']); ?></td>
                 </tr>
             <?php } ?>
         </table>

@@ -10,36 +10,51 @@
 
 <body>
 
-  <form id="form" action="../../backend_php/add_user.php" method="POST">
-    <h2 style="text-align: center;">Create User</h2>
+  <?php include "navbar.php" ?>
 
-    <input type="text" id="name" name="name" placeholder="Full Name" value="<?php echo $_SESSION['name'] ?? '' ?>" required>
-    <div class="error" id="nameError"></div>
-    
-    <input type="email" id="email" name="email" placeholder="Email" value="<?php echo $_SESSION['email'] ?? '' ?>" required>
-    <div class="error" id="emailError">
-      <?php echo $_SESSION['email_error'] ?? ''; ?>
-    </div>
-    
-    <input type="password" id="password" name="password" placeholder="Password" required>
-    <div class="error" id="passwordError"></div>
+  <div class="container">
 
-    <select name="role" id="role">
-        <option value="null">Select User</option>
-        <option value="admin">Admin</option>
-        <option value="employer">Employer</option>
-    </select>
-    <div class="error" id="selectError"></div>
-    
-    <button type="submit">Create</button>
+    <h2>Create User</h2>
+  
+    <form class="label_form" id="form" action="../../backend_php/add_user.php" method="POST">
+  
+      <div>
+        <input type="text" id="name" name="name" placeholder="Full Name" value="<?php echo $_SESSION['name'] ?? '' ?>" required>
+        <div class="error" id="nameError"></div>
+      </div>
+      
+      <div>
+        <input type="email" id="email" name="email" placeholder="Email" value="<?php echo $_SESSION['email'] ?? '' ?>" required>
+        <div class="error" id="emailError">
+          <?php echo $_SESSION['email_error'] ?? ''; ?>
+        </div>
+      </div>
 
-    <?php 
-      unset($_SESSION['email_error']); 
-      unset($_SESSION['name']); 
-      unset($_SESSION['email']); 
-    ?>
-  </form>
+      <div>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+        <div class="error" id="passwordError"></div>
+      </div>      
 
+      <div>
+        <select name="role" id="role">
+            <option value="null">Select User</option>
+            <option value="admin">Admin</option>
+            <option value="employer">Employer</option>
+        </select>
+        <div class="error" id="selectError"></div>
+      </div>
+      
+      <button type="submit">Create</button>
+  
+      <?php 
+        unset($_SESSION['email_error']); 
+        unset($_SESSION['name']); 
+        unset($_SESSION['email']); 
+      ?>
+    </form>
+
+  </div>
+  
   <script src="../../js/form.js"></script>
 
 </body>

@@ -57,34 +57,36 @@
 
 <body>
 
-    <?php include "navbar.php"; ?>
+    <?php include "navbar.php" ?>
 
     <div class="container">
 
-        <form method="POST">
-            <div class="label_input">
+        <h2>Edit Job</h2>
+
+        <form class="label_form" method="POST">
+            <div>
                 <label for="title">Job Title</label>
                 <input type="text" name="title" value="<?php //echo htmlspecialchars($job['title']); ?>" required>
             </div>
             
-            <div class="label_input">
+            <div>
                 <label for="company">Company Name</label>
                 <input type="text" name="company" value="<?php //echo htmlspecialchars($job['company']); ?>" required>
             </div>
             
-            <div class="label_input">
+            <div>
                 <label for="location">Location</label>
                 <input type="text" name="location" value="<?php //echo htmlspecialchars($job['location']); ?>" required>
             </div>
             
-            <div class="label_input">
+            <div>
                 <label for="salary">Salary</label>
                 <input type="text" name="salary" value="<?php //echo htmlspecialchars($job['salary']); ?>" required>
             </div>
             
-            <div class="label_input">
+            <div>
                 <label for="description">Job Description</label>
-                <textarea name="description" required><?php //echo htmlspecialchars($job['description']); ?></textarea>
+                <textarea name="description" rows="10" required><?php //echo htmlspecialchars($job['description']); ?></textarea>
             </div>
 
             <button type="submit">Update Job</button>

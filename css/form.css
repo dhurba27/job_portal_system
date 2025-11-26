@@ -5,22 +5,74 @@ body {
   min-height: 100vh;
 }
 
-form {
-  background: #fff;
+.container {
+  width: 80%;
+  background-color: white;
   padding: 36px;
-  display: flex;
-  flex-direction: column;
+  margin: 100px 0;
   border: 1px solid rgba(148, 163, 184, 0.18);
   border-radius: 28px;
   box-shadow: 0 30px 65px rgba(15, 23, 42, 0.15);
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+}
+
+.second_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label_form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 15px;
+  width: 55%;
+}
+
+.name {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.name input {
+  border-radius: 14px;
+  padding: 12px 16px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: #f8fafc;
+  outline: none;
+  width: 100%;
+}
+
+label {
+  display: block;
+  padding-bottom: 8px;
+  margin-left: 10px;
+}
+
+.form_container{
+  background: #fff;
+  padding: 36px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 28px;
+  box-shadow: 0 30px 65px rgba(15, 23, 42, 0.15);
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
   width: 500px;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
 input {
-  width: 100%;
-  margin-top: 30px;
-  margin-bottom: 5px;
   outline: none;
+  width: 100%;
   border-radius: 14px;
   padding: 12px 16px;
   border: 1px solid rgba(148, 163, 184, 0.35);
@@ -32,8 +84,6 @@ select {
   padding: 12px 16px;
   border: 1px solid rgba(148, 163, 184, 0.35);
   border-radius: 14px;
-  margin-top: 30px;
-  margin-bottom: 5px;
   outline: none;
   cursor: pointer;
   background: #f8fafc;
@@ -44,8 +94,6 @@ textarea {
   padding: 12px 16px;
   border: 1px solid rgba(148, 163, 184, 0.35);
   background: #f8fafc;
-  margin-top: 30px;
-  margin-bottom: 5px;
   outline: none;
   width: 100%;
 }
@@ -55,8 +103,6 @@ button {
   color: white;
   border: none;
   width: 100%;
-  margin-top: 30px;
-  margin-bottom: 24px;
   border-radius: 14px;
   padding: 14px 18px;
   font-weight: 600;
@@ -82,4 +128,5 @@ a:hover {
   margin-left: 16px;
   color: red;
   font-size: 14px;
+  padding-top: 5px;
 }

@@ -1,9 +1,9 @@
 <?php
 
     include "db.php";
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    $password = password_hash(trim($_POST['password']), PASSWORD_DEFAULT);
     $user = 'user';
     
     session_start();

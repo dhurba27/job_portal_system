@@ -1,5 +1,5 @@
 <?php
-// include("../../api/db.php");
+include("../../backend_php/db.php");
 
 // // Ensure admin is logged in
 // if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
@@ -7,41 +7,37 @@
 //     exit;
 // }
 
-// $message = "";
+if (!isset($_GET['id'])) {
+    header("Location: manage_users.php");
+    exit();
+}
 
-// if (!isset($_GET['id'])) {
-//     header("Location: manage_users.php");
-//     exit;
-// }
+$user_id = intval($_GET['id']);
 
-// $user_id = intval($_GET['id']);
+// Fetch user details
+$sql_fetch = $conn->prepare("SELECT * FROM users WHERE user_id = ?");
+$sql_fetch -> bind_param("i", $user_id);
+$sql_fetch -> execute();
+$result = $sql_fetch -> get_result();
 
-// // Fetch user details
-// $stmt = $conn->prepare("SELECT * FROM users WHERE id = ?");
-// $stmt->bind_param("i", $user_id);
-// $stmt->execute();
-// $result = $stmt->get_result();
+if ($result -> num_rows > 0) {
+    $value = $result -> fetch_assoc();
+}
 
-// if ($result->num_rows == 0) {
-//     $message = "<p class='error'> User not found.</p>";
-// } else {
-//     $user = $result->fetch_assoc();
-// }
+// Update user
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    $role = $_POST['role'];
 
-// // Update user
-// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-//     $name = trim($_POST['name']);
-//     $email = trim($_POST['email']);
-//     $role = $_POST['role'];
-
-//     if ($name && $email && $role) {
-//         $stmt = $conn->prepare("UPDATE users SET name=?, email=?, role=? WHERE id=?");
-//         $stmt->bind_param("sssi", $name, $email, $role, $user_id);
-//         if ($stmt->execute()) {
-//             $message = "<p class='success'> User updated successfully.</p>";
-//         } 
-//     } 
-// }
+    if ($name && $email && $role) {
+        $stmt = $conn->prepare("UPDATE users SET name=?, email=?, role=? WHERE id=?");
+        $stmt->bind_param("sssi", $name, $email, $role, $user_id);
+        if ($stmt->execute()) {
+            $message = "<p class='success'> User updated successfully.</p>";
+        } 
+    } 
+}
 ?> 
 
 <!DOCTYPE html>
@@ -58,20 +54,33 @@
     <?php include "navbar.php"; ?>
 
     <div class="container">
-        <form method="POST">
-            <h2 style="text-align: center;">Edit User</h2>
+        
+        <h2>Edit User</h2>
 
-            <input type="text" id="name" name="name" placeholder="Name" value="<?php //echo htmlspecialchars($user['name']); ?>" required>
+        <form class="label_form" method="POST">
 
-            <input type="email" id="email" name="email" placeholder="Email" value="<?php //echo htmlspecialchars($user['email']); ?>" required>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($value['name']); ?>" required>
+            </div>
 
-            <select name="role" required>
-                <option value="user" <?php //if ($user['role'] == 'user') echo 'selected'; ?>>User</option>
-                <option value="employer" <?php //if ($user['role'] == 'employer') echo 'selected'; ?>>Employer</option>
-                <option value="admin" <?php //if ($user['role'] == 'admin') echo 'selected'; ?>>Admin</option>
-            </select>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($value['email']); ?>" required>
+            </div>
 
-            <button type="submit">Update User</button>
+            <div>
+                <label for="role">User Type</label>
+                <select name="role" id="role" required>
+                    <option value="user" <?php if ($value['role'] == 'user') echo 'selected'; ?>>User</option>
+                    <option value="employer" <?php if ($value['role'] == 'employer') echo 'selected'; ?>>Employer</option>
+                    <option value="admin" <?php if ($value['role'] == 'admin') echo 'selected'; ?>>Admin</option>
+                </select>
+            </div>
+
+            <div>
+                <button type="submit">Update User</button>
+            </div>
         </form>
     </div>
 

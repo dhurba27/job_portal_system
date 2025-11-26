@@ -3,7 +3,7 @@
 <head>
     <title>Document</title>
     <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="../../css/user/job_form.css">
+    <link rel="stylesheet" href="../../css/form.css">
 </head>
 <body>
 
@@ -12,7 +12,7 @@
     <div class="container">
         <h3>Job Form</h3>
         <div class="second_container">
-            <form action="">
+            <form class="label_form" action="">
                 <div class="name">
                     <div>
                         <label for="first_name">First Name</label>  
@@ -44,7 +44,7 @@
                     <input type="file" id="cv" name="cv">
                 </div>
                 <div>
-                    <input type="submit" name="submit" class="button">
+                    <button type="submit">Submit</button>
                 </div>
             </form>
             <div>

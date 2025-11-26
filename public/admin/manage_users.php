@@ -25,12 +25,14 @@ $values = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <div>Name</div>
                 <div>Email</div>
                 <div>Role</div>
+                <div>Action</div>
             </div>
             <?php foreach($values as $value) { ?>
                 <div class="info">
                     <div><?php echo htmlspecialchars($value['name']); ?></div>
                     <div><?php echo htmlspecialchars($value['email']); ?></div>
                     <div><?php echo htmlspecialchars($value['role']); ?></div>
+                    <a href="edit_user.php?id=<?php echo $value['user_id'] ?>">Edit</a>
                 </div>
             <?php } ?>
     </div>

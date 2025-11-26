@@ -1,8 +1,8 @@
 <?php
 
     include "db.php";
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
 
     session_start();
     $_SESSION['email'] = $email;

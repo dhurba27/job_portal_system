@@ -15,6 +15,8 @@ form.addEventListener('submit', function(e){
         if(name.value.length < 3){
             name_error.innerText = "name is to short";
             valid = false;
+        } else {
+            name_error.innerText = '';
         }
     }
 
@@ -23,6 +25,10 @@ form.addEventListener('submit', function(e){
         if(!pattern.test(email.value)){
             email_error.innerText = "Invalid Email";
             valid = false;
+        } else if (email_error) {
+            //do nothing
+        } else {
+            email_error.innerText = '';
         }
     }
 
@@ -30,6 +36,8 @@ form.addEventListener('submit', function(e){
         if(password.value.length < 8 || password.value.length > 20){
             password_error.innerText = "password must be longer then 8 character and shorter than 20 character";
             valid = false;
+        } else {
+            password_error.innerText = '';
         }
     }
 
@@ -37,6 +45,8 @@ form.addEventListener('submit', function(e){
         if(role.value == "null"){
             selectError.innerText = "select an option";
             valid = false;
+        } else {
+            selectError.innerText = '';
         }
     }
 

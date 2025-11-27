@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php include '../../backend/login.php' ?>
 <!DOCTYPE html>
 <html>
 
@@ -13,19 +13,20 @@
 
     <h2 style="text-align: center;">LOGIN</h2>
 
-    <form class="form" id="form" action="../../backend_php/login.php" method="POST">
+    <form class="form" id="form" action="" method="POST">
   
       <div>
-        <input type="email" id="email" name="email" placeholder="Email" value="<?php echo $_SESSION['email'] ?? '' ?>" required>
+        <input type="email" id="email" name="email" placeholder="Email" 
+        value="<?= htmlspecialchars($_SESSION['email'] ?? '') ?>" required>
         <div class="error" id="emailError">
-          <?php echo $_SESSION['email_error'] ?? '' ?>
+          <?= $_SESSION['email_error'] ?? '' ?>
         </div>
       </div>
       
       <div>
         <input type="password" id="password" name="password" placeholder="Password" required>
         <div class="error" id="passwordError">
-          <?php echo $_SESSION['password_error'] ?? '' ?>
+          <?= $_SESSION['password_error'] ?? '' ?>
         </div>
       </div>
   

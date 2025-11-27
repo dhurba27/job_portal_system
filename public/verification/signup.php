@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php include '../../backend/signup.php' ?>
 <!DOCTYPE html>
 <html>
 
@@ -14,17 +14,19 @@
 
     <h2 style="text-align: center;">SIGN UP</h2>
 
-    <form class="form" id="form" action="../../backend_php/signup.php" method="POST">
+    <form class="form" id="form" action="" method="POST">
   
       <div>
-        <input type="text" id="name" name="name" placeholder="Full Name" value="<?php echo $_SESSION['name'] ?? '' ?>" required>
+        <input type="text" id="name" name="name" placeholder="Full Name" 
+        value="<?= htmlspecialchars($_SESSION['name'] ?? '') ?>" required>
         <div class="error" id="nameError"></div>
       </div>
       
       <div>
-        <input type="email" id="email" name="email" placeholder="Email" value="<?php echo $_SESSION['email'] ?? '' ?>" required>
+        <input type="email" id="email" name="email" placeholder="Email" 
+        value="<?= htmlspecialchars($_SESSION['email'] ?? '') ?>" required>
         <div class="error" id="emailError">
-          <?php echo $_SESSION['email_error'] ?? ''; ?>
+          <?= $_SESSION['email_error'] ?? ''; ?>
         </div>
       </div>
       
@@ -44,7 +46,6 @@
     </form>
 
   </div>
-
 
   <script src="../../js/form.js"></script>
 

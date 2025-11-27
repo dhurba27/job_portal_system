@@ -31,6 +31,7 @@
     <div class="links">
         <a href="admin-dashboard.php">Jobs</a>
         <a href="manage_users.php">Manage Users</a>
-        <a href="../../api/logout.php">Logout</a>
+        <a href="add_user.php">Add User</a>
+        <a href="../../backend/logout.php">Logout</a>
     </div>
 </div>

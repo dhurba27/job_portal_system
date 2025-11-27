@@ -1,5 +1,5 @@
 <?php
-include("../../backend_php/db.php");
+include "../../backend/db.php";
 $sql = "select * from users";
 $result = mysqli_query($conn, $sql);
 $values = mysqli_fetch_all($result, MYSQLI_ASSOC);

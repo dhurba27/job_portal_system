@@ -32,6 +32,6 @@
         <a href="user_dashboard.php">Home</a>
         <a href="jobs.php">Jobs</a>
         <a href="my_applications.php">My Applications</a>
-        <a href="../../backend_php/logout.php">Logout</a>
+        <a href="../../backend/logout.php">Logout</a>
     </div>
 </div>

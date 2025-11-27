@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php include '../../backend/admin/add_user.php' ?>
 <!DOCTYPE html>
 <html>
 
@@ -16,17 +16,19 @@
 
     <h2>Create User</h2>
   
-    <form class="label_form" id="form" action="../../backend_php/add_user.php" method="POST">
+    <form class="label_form" id="form" action="" method="POST">
   
       <div>
-        <input type="text" id="name" name="name" placeholder="Full Name" value="<?php echo $_SESSION['name'] ?? '' ?>" required>
+        <input type="text" id="name" name="name" placeholder="Full Name" 
+        value="<?= htmlspecialchars($_SESSION['name'] ?? '') ?>" required>
         <div class="error" id="nameError"></div>
       </div>
       
       <div>
-        <input type="email" id="email" name="email" placeholder="Email" value="<?php echo $_SESSION['email'] ?? '' ?>" required>
+        <input type="email" id="email" name="email" placeholder="Email" 
+        value="<?= htmlspecialchars($_SESSION['email'] ?? '') ?>" required>
         <div class="error" id="emailError">
-          <?php echo $_SESSION['email_error'] ?? ''; ?>
+          <?= $_SESSION['email_error'] ?? ''; ?>
         </div>
       </div>
 
@@ -38,18 +40,25 @@
       <div>
         <select name="role" id="role">
             <option value="null">Select User</option>
-            <option value="admin">Admin</option>
-            <option value="employer">Employer</option>
+            <option value="admin" 
+            <?= ($_SESSION['role'] ?? '' == 'admin') ? 'selected' : '';?>>
+              Admin
+            </option>
+            <option value="employer" 
+            <?= ($_SESSION['role'] ?? '' == 'employer') ? 'selected' : '';?>>
+              Employer
+            </option>
         </select>
         <div class="error" id="selectError"></div>
       </div>
       
       <button type="submit">Create</button>
   
-      <?php 
+      <?php
         unset($_SESSION['email_error']); 
         unset($_SESSION['name']); 
         unset($_SESSION['email']); 
+        unset($_SESSION['role']);
       ?>
     </form>
 

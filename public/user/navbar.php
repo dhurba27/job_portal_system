@@ -1,33 +1,37 @@
 <style>
     .navbar {
-            background-color: #007BFF;
+            background-color: #3E5172;
             color: white;
-            padding: 15px 30px;
+            padding: 15px 100px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: fixed;
+            top: 0;
             width: 100%;
         }
 
         .navbar a {
             color: white;
             text-decoration: none;
-            background: #0056b3;
-            padding: 8px 15px;
-            border-radius: 5px;
         }
 
         .navbar a:hover {
-            background: #004080;
+            text-decoration: underline;
+        }
+
+        .links{
+            display: flex;
+            gap: 25px;
         }
 </style>
 
 <div class="navbar">
-    <h2>Job Portal - User Dashboard</h2>
-    <div>
-        <a href="user-dashboard.php">Home</a>
+    <h2>rojgari</h2>
+    <div class="links">
+        <a href="user_dashboard.php">Home</a>
+        <a href="jobs.php">Jobs</a>
         <a href="my_applications.php">My Applications</a>
-        <a href="../../api/logout.php">Logout</a>
+        <a href="../../backend/logout.php">Logout</a>
     </div>
 </div>

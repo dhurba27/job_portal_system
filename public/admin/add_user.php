@@ -38,17 +38,19 @@
       </div>      
 
       <div>
-        <select name="role" id="role">
-            <option value="null">Select User</option>
-            <option value="admin" 
-            <?= ($_SESSION['role'] ?? '' == 'admin') ? 'selected' : '';?>>
-              Admin
-            </option>
-            <option value="employer" 
-            <?= ($_SESSION['role'] ?? '' == 'employer') ? 'selected' : '';?>>
-              Employer
-            </option>
-        </select>
+        <div class="select-div">
+          <select name="role" id="role">
+              <option value="null">Select User</option>
+              <option value="admin" 
+              <?= ($_SESSION['role'] ?? '' == 'admin') ? 'selected' : '';?>>
+                Admin
+              </option>
+              <option value="employer" 
+              <?= ($_SESSION['role'] ?? '' == 'employer') ? 'selected' : '';?>>
+                Employer
+              </option>
+          </select>
+        </div>
         <div class="error" id="selectError"></div>
       </div>
       

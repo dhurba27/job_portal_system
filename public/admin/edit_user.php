@@ -35,20 +35,22 @@
 
             <div>
                 <label for="role">User Type</label>
-                <select name="role" id="role" required>
-
-                    <option value="user" <?= $role_value == 'user' ? 'selected' : '' ?>>
-                        User
-                    </option>
-
-                    <option value="employer" <?= $role_value == 'employer' ? 'selected' : '' ?>>
-                        Employer
-                    </option>
-
-                    <option value="admin" <?= $role_value == 'admin' ? 'selected' : '' ?>>
-                        Admin
-                    </option>
-                </select>
+                <div class="select-div">
+                    <select name="role" id="role" required>
+    
+                        <option value="user" <?= $role_value == 'user' ? 'selected' : '' ?>>
+                            User
+                        </option>
+    
+                        <option value="employer" <?= $role_value == 'employer' ? 'selected' : '' ?>>
+                            Employer
+                        </option>
+    
+                        <option value="admin" <?= $role_value == 'admin' ? 'selected' : '' ?>>
+                            Admin
+                        </option>
+                    </select>
+                </div>
                 <div class="error" id="selectError"></div>
             </div>
 

@@ -37,7 +37,7 @@
                 </div>
                 <div>
                     <label for="letter">Cover Letter</label>
-                    <textarea name="letter" id="letter"></textarea> 
+                    <textarea name="letter" id="letter" rows="8"></textarea> 
                 </div>
                 <div>
                     <label for="cv">Upload CV</label>

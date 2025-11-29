@@ -21,7 +21,7 @@
             Job Description
         </div>
         <div>
-            <button class="button">Apply for job</button>
+            <button class="button" onclick="window.location.href = 'job_form.php'">Apply for job</button>
         </div>
     </div>
 </body>

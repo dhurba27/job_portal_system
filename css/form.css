@@ -52,7 +52,7 @@ label {
   margin-left: 10px;
 }
 
-.form_container{
+.form_container {
   background: #fff;
   padding: 36px;
   border: 1px solid rgba(148, 163, 184, 0.18);
@@ -79,14 +79,27 @@ input {
   background: #f8fafc;
 }
 
-select {
+input:focus {
+  border-color: rgba(37, 99, 235, 0.7);
+  box-shadow: 0 0 0 0.15rem rgba(37, 99, 235, 0.15);
+}
+
+.select-div {
   width: 100%;
-  padding: 12px 16px;
   border: 1px solid rgba(148, 163, 184, 0.35);
   border-radius: 14px;
-  outline: none;
+  padding: 7px 16px;
   cursor: pointer;
   background: #f8fafc;
+}
+
+select {
+  cursor: pointer;
+  background: #f8fafc;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 5px 0;
 }
 
 textarea {

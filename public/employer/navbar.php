@@ -29,9 +29,9 @@
 <div class="navbar">
     <h2>rojgari</h2>
     <div class="links">
-        <a href="admin_dashboard.php">Jobs</a>
-        <a href="manage_users.php">Manage Users</a>
-        <a href="add_user.php">Add User</a>
+        <a href="employer_dashboard.php">Home</a>
+        <a href="add_job.php">Add Job</a>
+        <a href="applications.php">Applications</a>
         <a href="../../backend/logout.php">Logout</a>
     </div>
 </div>

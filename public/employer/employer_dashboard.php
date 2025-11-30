@@ -27,10 +27,10 @@
 
 <body>
 
-    <?php include 'navbar.php' ?>
+    <?php include '../navbar.php' ?>
 
     <div class="container">
-        <h2>My Applications</h2>
+        <h2>Applications</h2>
 
         <div class="title">
             <div>Title</div>

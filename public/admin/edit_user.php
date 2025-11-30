@@ -11,7 +11,7 @@
 
 <body>
 
-    <?php include "navbar.php"; ?>
+    <?php include "../navbar.php"; ?>
 
     <div class="container">
         
@@ -55,7 +55,7 @@
             </div>
 
             <div>
-                <button type="submit">Update User</button>
+                <button class="button" type="submit">Update User</button>
             </div>
 
             <?php

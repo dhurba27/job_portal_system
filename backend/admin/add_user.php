@@ -1,7 +1,6 @@
 <?php
 
     include "../../backend/db.php";
-    session_start();
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         $name = trim($_POST['name']);

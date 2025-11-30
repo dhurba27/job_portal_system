@@ -9,7 +9,7 @@
 
 <body>
 
-    <?php include 'navbar.php' ?>
+    <?php include '../navbar.php' ?>
 
     <div class="container">
         <h2>Add New Job</h2>
@@ -64,7 +64,7 @@
                 <input type="date" name="deadline" id="deadline" required>
             </div>
 
-            <button type="submit">Add Job</button>
+            <button class="button" type="submit">Add Job</button>
         </form>
     </div>
 

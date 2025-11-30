@@ -1,6 +1,5 @@
 <?php
 include "../../backend/db.php";
-session_start();
 
 // // Ensure admin is logged in
 // if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {

@@ -57,7 +57,7 @@
 
 <body>
 
-    <?php include "navbar.php" ?>
+    <?php include "../navbar.php" ?>
 
     <div class="container">
 
@@ -89,7 +89,7 @@
                 <textarea name="description" rows="10" required><?php //echo htmlspecialchars($job['description']); ?></textarea>
             </div>
 
-            <button type="submit">Update Job</button>
+            <button class="button" type="submit">Update Job</button>
         </form>
 
     </div>

@@ -16,7 +16,7 @@ $values = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 <body>
 
-    <?php include "navbar.php"; ?>
+    <?php include "../navbar.php"; ?>
 
     <div class="container">
 

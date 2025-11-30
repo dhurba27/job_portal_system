@@ -35,7 +35,7 @@
         <div class="error" id="passwordError"></div>
       </div>
       
-      <button type="submit">Sign Up</button>
+      <button class="button" type="submit">Sign Up</button>
       <p>Already have an account? <a href="login.php">Login</a></p>
   
       <?php 

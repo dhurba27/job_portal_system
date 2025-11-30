@@ -18,8 +18,17 @@
         if($result -> num_rows > 0){
             $value = $result -> fetch_assoc();
             if(password_verify($password, $value['password'])){
-                header('Location: ../user/user_dashboard.php');
-                exit();
+                $_SESSION['user_role'] = $value['role'];
+                if($value['role'] === 'user') {
+                    header('Location: ../user/user_dashboard.php');
+                    exit();
+                } else if ($value['role'] === 'employer') {
+                    header('Location: ../employer/employer_dashboard.php');
+                    exit();
+                } else {
+                    header('Location: ../admin/admin_dashboard.php');
+                    exit();
+                }
             } else {
                 $_SESSION['password_error'] = 'Incorrect Password';
                 header('Location: login.php');

@@ -111,7 +111,7 @@ textarea {
   width: 100%;
 }
 
-button {
+.button {
   background: #0d6efd;
   color: white;
   border: none;

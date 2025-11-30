@@ -45,7 +45,7 @@
 
 <body>
 
-    <?php include 'navbar.php' ?>
+    <?php include '../navbar.php' ?>
 
     <div class="container">
         <h2>Applications</h2>

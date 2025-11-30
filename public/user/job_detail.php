@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <?php include "navbar.php"; ?>
+    <?php include "../navbar.php"; ?>
 
     <div class="container">
         <h3>Job Title</h3>

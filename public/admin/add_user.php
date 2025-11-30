@@ -10,7 +10,7 @@
 
 <body>
 
-  <?php include "navbar.php" ?>
+  <?php include "../navbar.php" ?>
 
   <div class="container">
 
@@ -54,7 +54,7 @@
         <div class="error" id="selectError"></div>
       </div>
       
-      <button type="submit">Create</button>
+      <button class="button" type="submit">Create</button>
   
       <?php
         unset($_SESSION['email_error']); 

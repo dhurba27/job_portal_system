@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <?php include "navbar.php"; ?>
+    <?php include "../navbar.php"; ?>
 
     <div class="container">
         <h3>Job Form</h3>
@@ -44,7 +44,7 @@
                     <input type="file" id="cv" name="cv">
                 </div>
                 <div>
-                    <button type="submit">Submit</button>
+                    <button class="button" type="submit">Submit</button>
                 </div>
             </form>
             <div>

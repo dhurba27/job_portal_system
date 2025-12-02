@@ -1,12 +1,19 @@
 <?php
 
     include "../../backend/db.php";
+
+    if ($_SESSION['user_role'] != 'admin') {
+        header("Location: ../verification/login.php");
+        exit();
+    }
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         $name = trim($_POST['name']);
         $email = trim($_POST['email']);
         $password = password_hash(trim($_POST['password']), PASSWORD_DEFAULT);
-        $user = trim($_POST['role']);
+        $user = 'employer';
+        //$user = trim($_POST['role']);
         
         $email_check = $conn -> prepare('select * from users where email = ?');
         $email_check -> bind_param('s', $email);
@@ -16,9 +23,9 @@
         if($result -> num_rows > 0) {
             $_SESSION['name'] = $name;
             $_SESSION['email'] = $email;
-            $_SESSION['role'] = $user;
+            //$_SESSION['role'] = $user;
             $_SESSION['email_error'] = "This email is already used";
-            header("Location: add_user.php");
+            header("Location: add_employer.php");
             exit();
         }
     
@@ -29,7 +36,7 @@
     
         if($sql -> execute()){
             $sql -> close();
-            header("Location: manage_users.php");
+            header("Location: admin_dashboard.php");
             exit();
         }
 

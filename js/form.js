@@ -5,8 +5,8 @@ const form = document.getElementById('form');
 const name_error = document.getElementById('nameError');
 const email_error = document.getElementById('emailError');
 const password_error = document.getElementById('passwordError');
-const role = document.getElementById('role');
-const selectError = document.getElementById('selectError');
+// const role = document.getElementById('role');
+// const selectError = document.getElementById('selectError');
 
 
 form.addEventListener('submit', function(e){
@@ -41,14 +41,14 @@ form.addEventListener('submit', function(e){
         }
     }
 
-    if(role){
-        if(role.value == "null"){
-            selectError.innerText = "select an option";
-            valid = false;
-        } else {
-            selectError.innerText = '';
-        }
-    }
+    // if(role){
+    //     if(role.value == "null"){
+    //         selectError.innerText = "select an option";
+    //         valid = false;
+    //     } else {
+    //         selectError.innerText = '';
+    //     }
+    // }
 
     if(!valid){
         e.preventDefault();

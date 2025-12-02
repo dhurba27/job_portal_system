@@ -1,4 +1,7 @@
-<?php include '../../backend/admin/edit_user.php' ?> 
+<?php
+session_start();
+include '../../backend/admin/edit_employer.php'; 
+?> 
 
 <!DOCTYPE html>
 <html>
@@ -33,26 +36,26 @@
                 </div>
             </div>
 
-            <div>
+            <!-- <div>
                 <label for="role">User Type</label>
                 <div class="select-div">
                     <select name="role" id="role" required>
     
-                        <option value="user" <?= $role_value == 'user' ? 'selected' : '' ?>>
+                        <option value="user" <?php //$role_value == 'user' ? 'selected' : '' ?>>
                             User
                         </option>
     
-                        <option value="employer" <?= $role_value == 'employer' ? 'selected' : '' ?>>
+                        <option value="employer" <?php //$role_value == 'employer' ? 'selected' : '' ?>>
                             Employer
                         </option>
     
-                        <option value="admin" <?= $role_value == 'admin' ? 'selected' : '' ?>>
+                        <option value="admin" <?php //$role_value == 'admin' ? 'selected' : '' ?>>
                             Admin
                         </option>
                     </select>
                 </div>
                 <div class="error" id="selectError"></div>
-            </div>
+            </div> -->
 
             <div>
                 <button class="button" type="submit">Update User</button>
@@ -62,7 +65,7 @@
                 unset($_SESSION['email_error']);
                 unset($_SESSION['name']);
                 unset($_SESSION['email']);
-                unset($_SESSION['role']);
+                //unset($_SESSION['role']);
             ?>
 
         </form>

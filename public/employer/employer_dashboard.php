@@ -1,28 +1,11 @@
-<?php
-// include("../../api/db.php");
-
-// // Ensure employer is logged in
-// if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'employer') {
-//     header("Location: ../index.html");
-//     exit;
-// }
-
-// $employer_id = $_SESSION['user_id'];
-
-// // Fetch jobs posted by this employer
-// $jobs_query = $conn->prepare("SELECT * FROM jobs WHERE posted_by=?");
-// $jobs_query->bind_param("i", $employer_id);
-// $jobs_query->execute();
-// $jobs_result = $jobs_query->get_result();
-?>
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Employer Dashboard - Job Portal</title>
     <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="../../css/employer/employer_dashboard.css">
+    <link rel="stylesheet" href="../../css/user/applications.css">
 </head>
 
 <body>
@@ -32,23 +15,32 @@
     <div class="container">
         <h2>Applications</h2>
 
-        <div class="title">
-            <div>Title</div>
-            <div>Company</div>
-            <div>Location</div>
-            <div>Salary</div>
-        </div>
-
-        <?php $i = 1; while ($i < 3) { ?>
-
-            <div class="info">
-                <div>title</div>
-                <div>company</div>
-                <div>location</div>
-                <div>salary</div>
+        <div class="table_container">
+            <div class="title">
+                <div>Title</div>
+                <div>Company</div>
+                <div>Location</div>
+                <div>Salary</div>
+                <div>Action</div>
             </div>
-
-        <?php $i++;} ?>
+            
+            <div class="info_container">
+                <?php $i = 1; while ($i < 3) { ?>
+        
+                    <div class="info">
+                        <div>title</div>
+                        <div>company</div>
+                        <div>location</div>
+                        <div>salary</div>
+                         <div class="action">
+                            <a href="edit_job.php?id=<?php echo $job['id']; ?>" class="edit">Edit</a>
+                            <a href="dashboard.php?delete_job=<?php echo $job['id']; ?>" class="delete" onclick="return confirm('Are you sure you want to delete this job?');">Delete</a>
+                        </div>
+                    </div>
+        
+                <?php $i++;} ?>
+            </div>
+        </div>
     </div>
 
 </body>

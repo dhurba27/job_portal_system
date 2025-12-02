@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -18,6 +19,7 @@
             <button type="submit">Search</button>
         </form>
     </div>
+    
     <div class="jobs_background">
         <div class="container">
             <h3>Popular Jobs</h3>

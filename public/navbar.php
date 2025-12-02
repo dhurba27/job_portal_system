@@ -72,7 +72,7 @@
             border-radius: 50%;
         }
 </style>
-<?php session_start(); ?>
+
 <div class="navbar">
     <h2>rojgari</h2>
     <div class="links">
@@ -93,13 +93,9 @@
                 <img src="../../image/01.jpg" alt="profile">
             </button>
         <?php } else { ?>
-            <a href="admin_dashboard.php">Jobs</a>
-            <a href="manage_users.php">Manage Users</a>
-            <a href="add_user.php">Add User</a>
+            <a href="admin_dashboard.php">Home</a>
+            <a href="add_employer.php">Add Employer</a>
             <button class="nav_button" onclick="window.location.href='../../backend/logout.php'">Logout</button>
-            <button class="profile_button">
-                <img src="../../image/01.jpg" alt="profile">
-            </button>
         <?php } ?>
     </div>
 </div>

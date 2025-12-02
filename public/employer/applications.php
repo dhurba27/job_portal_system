@@ -32,6 +32,7 @@
 // $app_query->bind_param("i", $employer_id);
 // $app_query->execute();
 // $app_result = $app_query->get_result();
+session_start();
 ?>
 
 <!DOCTYPE html>

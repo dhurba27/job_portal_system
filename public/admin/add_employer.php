@@ -1,9 +1,12 @@
-<?php include '../../backend/admin/add_user.php' ?>
+<?php
+session_start();
+include '../../backend/admin/add_employer.php'; 
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
-  <title>Job Portal</title>
+  <title>Add Employer</title>
   <link rel="stylesheet" href="../../css/styles.css">
   <link rel="stylesheet" href="../../css/form.css">
 </head>
@@ -14,7 +17,7 @@
 
   <div class="container">
 
-    <h2>Create User</h2>
+    <h2>Create Employer</h2>
   
     <form class="label_form" id="form" action="" method="POST">
   
@@ -37,22 +40,22 @@
         <div class="error" id="passwordError"></div>
       </div>      
 
-      <div>
+      <!-- <div>
         <div class="select-div">
           <select name="role" id="role">
               <option value="null">Select User</option>
               <option value="admin" 
-              <?= ($_SESSION['role'] ?? '' == 'admin') ? 'selected' : '';?>>
+              <?php //($_SESSION['role'] ?? '' == 'admin') ? 'selected' : ''; ?>>
                 Admin
               </option>
               <option value="employer" 
-              <?= ($_SESSION['role'] ?? '' == 'employer') ? 'selected' : '';?>>
+              <?php //($_SESSION['role'] ?? '' == 'employer') ? 'selected' : ''; ?>>
                 Employer
               </option>
           </select>
         </div>
         <div class="error" id="selectError"></div>
-      </div>
+      </div> -->
       
       <button class="button" type="submit">Create</button>
   
@@ -60,7 +63,7 @@
         unset($_SESSION['email_error']); 
         unset($_SESSION['name']); 
         unset($_SESSION['email']); 
-        unset($_SESSION['role']);
+        // unset($_SESSION['role']);
       ?>
     </form>
 

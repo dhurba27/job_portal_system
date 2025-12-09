@@ -1,38 +1,6 @@
 <?php
-// include("../../api/db.php");
-
-// // Ensure employer is logged in
-// if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'employer') {
-//     header("Location: ../index.html");
-//     exit;
-// }
-
-// $employer_id = $_SESSION['user_id'];
-
-// // Handle status update
-// if (isset($_POST['update_status'])) {
-//     $app_id = $_POST['app_id'];
-//     $new_status = $_POST['status'];
-
-//     $update = $conn->prepare("UPDATE applications SET status=? WHERE id=?");
-//     $update->bind_param("si", $new_status, $app_id);
-//     $update->execute();
-//     header("location: applications.php");
-// }
-
-// // Fetch applications for this employer's jobs
-// $app_query = $conn->prepare("
-//     SELECT a.id AS app_id, a.status, u.name AS applicant_name, j.title, j.company, j.location
-//     FROM applications a
-//     JOIN jobs j ON a.job_id = j.id
-//     JOIN users u ON a.user_id = u.id
-//     WHERE j.posted_by = ?
-//     ORDER BY a.id DESC
-// ");
-// $app_query->bind_param("i", $employer_id);
-// $app_query->execute();
-// $app_result = $app_query->get_result();
 session_start();
+include '../../backend/employer/applications.php';
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +9,7 @@ session_start();
 <head>
     <title>Applications - Employer Dashboard</title>
     <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="../../css/employer/applications.css">
+    <link rel="stylesheet" href="../../css/user/applications.css">
 </head>
 
 <body>
@@ -49,41 +17,38 @@ session_start();
     <?php include '../navbar.php' ?>
 
     <div class="container">
-        <h2>Applications</h2>
+        <h2>Applications for <?= $job_title ?></h2>
+        <div class="table_container">
 
-        <div class="title">
-            <div>Applicant Name</div>
-            <div>Job Title</div>
-            <div>Company</div>
-            <div>Location</div>
-            <div>Status</div>
-            <div>Update</div>
-            <div>Action</div>
-        </div>
-
-        <?php $i = 1; while ($i < 3) { ?>
-
-            <div class="info">
-                <div>Applicant Name</div>
-                <div>Job Title</div>
-                <div>Company</div>
-                <div>Location</div>
-                <div>salary</div>
-                <div>Status</div>
-                <div>
-                    <form method="POST" style="display:inline;">
-                        <input type="hidden" name="app_id" value="<?php echo $app['app_id']; ?>">
-                        <select name="status">
-                            <option value="Pending" <?php //if ($app['status'] == 'Pending') echo 'selected'; ?>>Pending</option>
-                            <option value="Accepted" <?php //if ($app['status'] == 'Accepted') echo 'selected'; ?>>Accepted</option>
-                            <option value="Rejected" <?php //if ($app['status'] == 'Rejected') echo 'selected'; ?>>Rejected</option>
-                        </select>
-                        <button type="submit" name="update_status">Update</button>
-                    </form>
+            <?php if(!empty($values)) { ?>
+                <div class="title">
+                    <div>Applicant Name</div>
+                    <div>Email</div>
+                    <div>Contact</div>
+                    <div>Address</div>
+                    <div>Status</div>
+                    <div>Action</div>
                 </div>
-            </div>
-
-        <?php $i++;} ?>
+                <div class="info_container">
+                    <?php foreach($values as $value) { ?>
+            
+                        <div class="info">
+                            <div><?= $value['name'] ?></div>
+                            <div><?= $value['email'] ?></div>
+                            <div><?= $value['contact'] ?></div>
+                            <div><?= $value['address'] ?></div>
+                            <div>Status</div>
+                            <div>
+                                view details
+                            </div>
+                        </div>
+            
+                    <?php } ?>
+                </div>
+            <?php } else { ?>
+                <div>No application</div>
+            <?php } ?>
+        </div>
     </div>
 
 </body>

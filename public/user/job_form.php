@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php
+session_start(); 
+include '../../backend/user/job_form.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,47 +14,36 @@
     <?php include "../navbar.php"; ?>
 
     <div class="container">
-        <h3>Job Form</h3>
-        <div class="second_container">
-            <form class="label_form" action="">
-                <div class="name">
-                    <div>
-                        <label for="first_name">First Name</label>  
-                        <input type="text" id="first_name" name="first_name">
-                    </div>
-                    <div>
-                        <label for="last_name">Last Name</label>
-                        <input type="text" id="Last_name" name="last_name">
-                    </div>
-                </div>
-                <div>
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email">
-                </div>
-                <div>
-                    <label for="contact">Contact</label>
-                    <input type="tel" id="contact" name="contact">
-                </div>
-                <div>
-                    <label for="address">Address</label>
-                    <input type="tel" id="address" name="address">
-                </div>
-                <div>
-                    <label for="letter">Cover Letter</label>
-                    <textarea name="letter" id="letter" rows="8"></textarea> 
-                </div>
-                <div>
-                    <label for="cv">Upload CV</label>
-                    <input type="file" id="cv" name="cv">
-                </div>
-                <div>
-                    <button class="button" type="submit">Submit</button>
-                </div>
-            </form>
+        <h3>Job Form</h3>        
+        <form class="label_form" action="" method="post">
             <div>
-                <img src="../../image/image1.jpg" alt="image" width="400px">
+                <label for="name">Full Name</label>  
+                <input type="text" id="name" name="name" required>
             </div>
-        </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="contact">Contact</label>
+                <input type="tel" id="contact" name="contact" required>
+            </div>
+            <div>
+                <label for="address">Address</label>
+                <input type="tel" id="address" name="address" required>
+            </div>
+            <div>
+                <label for="letter">Cover Letter</label>
+                <textarea name="letter" id="letter" rows="8"></textarea> 
+            </div>
+            <div>
+                <label for="cv">Upload CV</label>
+                <input type="file" id="cv" name="cv" required>
+            </div>
+            <div>
+                <button class="button" type="submit">Submit</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>

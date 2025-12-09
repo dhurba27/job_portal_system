@@ -1,10 +1,14 @@
-<?php session_start(); ?>
+<?php
+session_start();
+include '../../backend/user/user_dashboard.php';
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>User Dashboard - Job Portal</title>
     <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/job_card.css">
     <link rel="stylesheet" href="../../css/user/user_dashboard.css">
 </head>
 
@@ -24,18 +28,16 @@
         <div class="container">
             <h3>Popular Jobs</h3>
             <div class="jobs_container">
-                <?php for($i = 0; $i < 8; $i++) { ?>
-                    <div class="job_card" onclick="window.location.href='job_detail.php'">
-                        <div>Full Time</div>
-                        <h3>Froent-end Developer</h3>
-                        <div>Location</div>
+                <?php foreach($values as $value){ ?>
+                    <div class="job_card" onclick="window.location.href='job_detail.php?id=<?= $value['job_id'] ?>'">
+                        <div><?php echo $value['job_type'] ?></div>
+                        <h3><?php echo $value['job_title'] ?></h3>
+                        <div><?php echo $value['location'] ?></div> 
                         <div class="job_card_footer">
+                            <img src="../../image/<?php echo $value['image'] ?>" alt="image" class="company_logo">
                             <div>
-                                <img src="../../image/01.jpg" alt="image" class="company_logo" width="50px">
-                            </div> 
-                            <div>
-                                <div>Octuber 10, 2020</div>
-                                <div>Creative Studio</div>
+                                <div><?php echo date("F j, Y", strtotime($value['posted_on'])) ?></div>
+                                <div><?php echo $value['company'] ?></div>
                             </div>
                         </div>
                     </div>
@@ -43,7 +45,8 @@
             </div>
         </div>
     </div>
-
+    
+    <?php include 'footer.php' ?>
 </body>
 
 </html>

@@ -1,0 +1,30 @@
+.job_card {
+    border-radius: 18px;
+    padding: 24px 24px;
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    background: #fff;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.company_logo{
+    width: 70px;
+    border-radius: 10px;
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.job_card:hover {
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+    transition: 400ms;
+}
+
+.job_card_footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

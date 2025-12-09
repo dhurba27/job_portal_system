@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  width: 80%;
+  width: 60%;
   background-color: white;
   padding: 36px;
   margin: 100px 0;
@@ -14,37 +14,17 @@ body {
   border-radius: 28px;
   box-shadow: 0 30px 65px rgba(15, 23, 42, 0.15);
   display: flex;
-  gap: 40px;
+  gap: 30px;
   flex-direction: column;
 }
 
-.second_container {
-  display: flex;
-  justify-content: space-between;
-}
 
 .label_form {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding-left: 15px;
-  width: 55%;
 }
 
-.name {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.name input {
-  border-radius: 14px;
-  padding: 12px 16px;
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  background: #f8fafc;
-  outline: none;
-  width: 100%;
-}
 
 label {
   display: block;

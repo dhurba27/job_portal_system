@@ -9,7 +9,7 @@ include '../../backend/admin/admin_dashboard.php';
 <head>
     <title>Manage Users - Admin</title>
     <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="../../css/user/applications.css">
+    <link rel="stylesheet" href="../../css/admin/admin_dashboard.css">
 </head>
 
 <body>

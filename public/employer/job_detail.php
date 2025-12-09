@@ -1,6 +1,6 @@
 <?php 
 session_start(); 
-include '../../backend/user/job_detail.php';
+include '../../backend/employer/job_detail.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -28,7 +28,10 @@ include '../../backend/user/job_detail.php';
             <?= $value['job_requirement'] ?>
         </div>
         <div>
-            <button class="button" onclick="window.location.href = 'job_form.php?id=<?= $id ?>'">Apply for job</button>
+            <button class="button" 
+            onclick="window.location.href = 'applications.php?id=<?= $id ?>&job=<?= $value['job_title'] ?>'">
+                View Applications
+            </button>
         </div>
     </div>
 </body>

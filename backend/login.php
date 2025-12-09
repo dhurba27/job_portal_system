@@ -19,6 +19,7 @@
             $value = $result -> fetch_assoc();
             if(password_verify($password, $value['password'])){
                 unset($_SESSION['email']);
+                $_SESSION['user_id'] = $value['user_id'];
                 $_SESSION['user_role'] = $value['role'];
                 if($value['role'] === 'user') {
                     header('Location: ../user/user_dashboard.php');

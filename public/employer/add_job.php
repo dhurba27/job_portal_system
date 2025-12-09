@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php 
+session_start(); 
+include '../../backend/employer/add_job.php';
+?>
 <!DOCTYPE html>
 <html>
 
@@ -34,20 +37,11 @@
                 <label for="job_type">Job Type</label>
                 <div  class="select-div">
                     <select name="job_type" id="job_type">
+                        <option value="null">Job Type</option>
                         <option value="Full-Time">Full Time</option>
                         <option value="Part-Time">Part Time</option>
                     </select>
                 </div>
-            </div>
-            
-            <div>
-                <label for="experience">Experience</label>
-                <input type="text" name="experience" id="experience" required>
-            </div>
-            
-            <div>
-                <label for="salary">Salary</label>
-                <input type="number" name="salary" id="salary" required>
             </div>
             
             <div>
@@ -61,8 +55,18 @@
             </div>
             
             <div>
+                <label for="salary">Salary</label>
+                <input type="text" name="salary" id="salary">
+            </div>
+
+            <div>
                 <label for="deadlin">Deadline</label>
                 <input type="date" name="deadline" id="deadline" required>
+            </div>
+
+            <div>
+                <label for="image">Logo</label>
+                <input type="file" name="image" id="image">
             </div>
 
             <button class="button" type="submit">Add Job</button>

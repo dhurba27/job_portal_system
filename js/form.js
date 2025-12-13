@@ -12,8 +12,13 @@ const password_error = document.getElementById('passwordError');
 form.addEventListener('submit', function(e){
     let valid = true;
     if(name){
-        if(name.value.length < 3){
-            name_error.innerText = "name is to short";
+        const nameValue = name.value.trim();
+        const pattern = /^[A-Za-z]+(?:[ '-][A-Za-z]+)*$/;
+        if(!pattern.test(nameValue)){
+            name_error.innerText = 'Only letters, spaces, hyphens or apostrophes allowed';
+            valid = false;
+        } else if(nameValue.length < 2 || nameValue.length > 50){
+            name_error.innerText = "Name length must be between 2 and 50 character";
             valid = false;
         } else {
             name_error.innerText = '';
@@ -25,16 +30,14 @@ form.addEventListener('submit', function(e){
         if(!pattern.test(email.value)){
             email_error.innerText = "Invalid Email";
             valid = false;
-        } else if (email_error) {
-            //do nothing
-        } else {
+        }else {
             email_error.innerText = '';
         }
     }
 
     if(password){
-        if(password.value.length < 8 || password.value.length > 20){
-            password_error.innerText = "password must be longer then 8 character and shorter than 20 character";
+        if(password.value.length < 8 || password.value.length > 30){
+            password_error.innerText = "Password must be between 8 and 30 character";
             valid = false;
         } else {
             password_error.innerText = '';

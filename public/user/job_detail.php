@@ -14,19 +14,37 @@ include '../../backend/user/job_detail.php';
     <?php include "../navbar.php"; ?>
 
     <div class="container">
-        <h3><?= $value['job_title'] ?></h3>
-        <div class="job_info">
-            <div><?= $value['job_type'] ?></div>
-            <div><?= $value['location'] ?></div>
-            <div>Posted: <?= date("F j, Y", strtotime($value['posted_on'])) ?></div>
-            <div><b>Closes:</b> <?= date("F j, Y", strtotime($value['deadline'])) ?></div>
+
+        <div class="job_detail_container">
+            <img src="../../image/<?php echo $value['image'] ?>" alt="image" class="company_logo">
+            <div class="job_detail">
+                <h3><?= $value['job_title'] ?></h3>
+                <div class="job_info">
+                    <div>
+                        <span class="job_type"><?= $value['job_type'] ?></span>
+                    </div>
+                    <div>
+                        <img src="../../icons/pin.png" alt="" class="location_icon">
+                        <?= $value['location'] ?>
+                    </div>
+                    <div>
+                        <b>Posted:</b> <?= date("F j, Y", strtotime($value['posted_on'])) ?>
+                    </div>
+                    <div>
+                        <b>Closes:</b> <?= date("F j, Y", strtotime($value['deadline'])) ?>
+                    </div>
+                </div>
+            </div>
         </div>
+
         <div>
             <?= $value['job_description'] ?>
         </div>
+
         <div>
             <?= $value['job_requirement'] ?>
         </div>
+        
         <div>
             <button class="button" onclick="window.location.href = 'job_form.php?id=<?= $id ?>'">Apply for job</button>
         </div>

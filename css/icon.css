@@ -1,0 +1,35 @@
+.input_container{
+    display: flex;
+    width: 100%;
+    border-radius: 14px;
+    padding: 13px 16px;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    background: #f8fafc;
+    align-items: center;
+}
+
+.input_container:focus-within{
+    border-color: rgba(37, 99, 235, 0.7);
+    box-shadow: 0 0 0 0.15rem rgba(37, 99, 235, 0.15);
+}
+
+.input_container input {
+    border: none;
+    outline: none;
+    width: 100%;
+    background: #f8fafc;
+    margin-left: 8px;
+}
+
+.input_container input:focus{
+    background: #f8fafc;
+}
+
+.input_container img {
+    width: 15px;
+    height: 15px;
+}
+
+#invisible_icon{
+    cursor: pointer;
+}

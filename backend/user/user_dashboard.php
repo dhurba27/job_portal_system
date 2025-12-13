@@ -1,7 +1,7 @@
 <?php
 include '../../backend/db.php';
-$sql = $conn -> prepare("select * from jobs");
-$sql -> execute();
-$result = $sql -> get_result();
+$sql_fetch = $conn -> prepare("select * from jobs");
+$sql_fetch -> execute();
+$result = $sql_fetch -> get_result();
 $values = $result -> fetch_all(MYSQLI_ASSOC);
-$sql -> close();
+$sql_fetch -> close();

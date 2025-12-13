@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilex:ital,wght@0,100..700;1,100..700&display=swap');
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lilex', monospace;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #f8fafc inset; 
+    -webkit-text-fill-color: #000; 
 }

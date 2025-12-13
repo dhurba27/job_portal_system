@@ -7,6 +7,7 @@
         background: #3E5172;    
         padding: 40px;
         color: #fff;
+        height: 300px;
     }
     .contact{
         display: flex;

@@ -3,12 +3,13 @@
     background-size: auto;
     background-repeat: no-repeat;
     background-position: center;
-    height: 700px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     gap: 50px;
     justify-content: center;
     align-items: center;
+    margin-top: 41px;
 }
 
 .search-container h1{
@@ -46,11 +47,16 @@
 .jobs_background{
     background: #f6f6f6;
     padding: 50px 0;
+    scroll-margin-top: 70px;
 }
 
 .container{
     width: 1160px;
     margin: 0 auto;
+}
+
+.container > h3{
+    text-align: center;
 }
 
 .jobs_container {

@@ -8,6 +8,7 @@ include '../../backend/user/application.php';
 <head>
     <title>My Applications - Job Portal</title>
     <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
     <link rel="stylesheet" href="../../css/user/applications.css">
 </head>
 
@@ -15,7 +16,7 @@ include '../../backend/user/application.php';
 
     <?php include "../navbar.php"; ?>
     <div class="container">
-        <h2>My Applications</h2>
+        <h2>Application</h2>
         <div class="table_container">
             
             <?php if(!empty($values)) { ?>

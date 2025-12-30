@@ -1,0 +1,40 @@
+.footer_container {
+    background: #3E5172;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    color: #fff;
+    padding: 40px 0;
+    margin: 0 auto;
+    width: 80%;
+    justify-items: center
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.list {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+.list img {
+    height: 18px;
+    width: 18px;
+    margin-right: 5px;
+}
+
+.contact_list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

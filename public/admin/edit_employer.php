@@ -7,8 +7,9 @@ include '../../backend/admin/edit_employer.php';
 <html>
 
 <head>
-    <title>Edit User - Admin</title>
+    <title>Edit Employers</title>
     <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
     <link rel="stylesheet" href="../../css/form.css">
 </head>
 

@@ -7,8 +7,9 @@ include '../../backend/admin/admin_dashboard.php';
 <html>
 
 <head>
-    <title>Manage Users - Admin</title>
+    <title>Manage Employers</title>
     <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
     <link rel="stylesheet" href="../../css/admin/admin_dashboard.css">
 </head>
 

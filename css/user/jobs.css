@@ -81,6 +81,10 @@ textarea {
     margin: 0 auto;
 }
 
+.container > h3{
+    text-align: center;
+}
+
 .jobs_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

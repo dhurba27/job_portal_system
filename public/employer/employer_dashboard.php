@@ -6,8 +6,9 @@ include '../../backend/employer/employer_dashboard.php';
 <html>
 
 <head>
-    <title>Employer Dashboard - Job Portal</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
     <link rel="stylesheet" href="../../css/job_card.css">
     <link rel="stylesheet" href="../../css/employer/employer_dashboard.css">
 </head>
@@ -40,6 +41,7 @@ include '../../backend/employer/employer_dashboard.php';
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="action">
                                 <a href="edit_job.php?id=<?= $value['job_id'] ?>" class="edit">Edit</a>
                                 <a href="dashboard.php?delete_job=<?= $job['id']; ?>" class="delete" onclick="return confirm('Are you sure you want to delete this job?');">Delete</a>

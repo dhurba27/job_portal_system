@@ -5,8 +5,9 @@ include '../../backend/employer/job_detail.php';
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Document</title>
+    <title>Job Detail</title>
     <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
     <link rel="stylesheet" href="../../css/user/job_detail.css">
 </head>
 <body>

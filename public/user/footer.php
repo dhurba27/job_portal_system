@@ -1,24 +1,21 @@
-<style>
-    .footer{
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
-        align-items: center;
-        background: #3E5172;    
-        padding: 40px;
-        color: #fff;
-        height: 300px;
-    }
-    .contact{
-        display: flex;
-        gap: 180px;
-    }
-</style>
-<div class="footer">
-    <h2>contact us</h2>
-    <div class="contact">
-        <span>rojgari@gmail.com</span>
-        <span>kathmandu, Nepal</span>
-        <span>+9836366363</span>
+
+<div class="footer_container">
+    <div class="footer">
+        <div>
+            <h2>Quick Links</h2>
+            <ul class="list">
+                <li><a href="user_dashboard.php">Home</a></li>
+                <li><a href="jobs.php">Jobs</a></li>
+                <li><a href="application.php">Applications</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2>Contact Us</h2>
+            <ul class="contact_list list">
+                <li><img src="../../icons/email.png" alt="">rojgari@gmail.com</li>
+                <li><img src="../../icons/pin.png" alt="">kathmandu, Nepal</li>
+                <li><img src="../../icons/phone.png" alt="">+9836366363</li>
+            </ul>
+        </div>
     </div>
 </div>

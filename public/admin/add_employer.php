@@ -8,6 +8,7 @@ include '../../backend/admin/add_employer.php';
 <head>
   <title>Add Employer</title>
   <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../../css/navbar.css">
   <link rel="stylesheet" href="../../css/icon.css">
   <link rel="stylesheet" href="../../css/form.css">
 </head>

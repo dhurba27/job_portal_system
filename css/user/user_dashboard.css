@@ -15,13 +15,14 @@
 .search-container h1{
     font-size: 60px;
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
 }
 
 .search-container input {
     width: 500px;
     font-size: 15px;
-    border-radius: 14px;
-    padding: 16px 24px;
+    border-radius: 12px;
+    padding: 16px 22px;
     border: 1px solid rgba(148, 163, 184, 0.35);
     background: #f8fafc;
     outline: none;
@@ -32,12 +33,23 @@
 }
 
 .search-container button {
-    padding: 18px 18px;
-    border-radius: 14px;
+    padding: 16px 22px;
+    border-radius: 12px;
     background: #0d6efd;
     color: white;
     border: none;
     cursor: pointer;
+}
+
+.search-container img{
+    width: 18px;
+    height: 18px;
+}
+
+.search-container form{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .search-container button:hover {

@@ -6,8 +6,9 @@ include '../../backend/employer/add_job.php';
 <html>
 
 <head>
-    <title>Add Job - Employer</title>
+    <title>Add Job</title>
     <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
     <link rel="stylesheet" href="../../css/form.css">
 </head>
 

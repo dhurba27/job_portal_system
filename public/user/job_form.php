@@ -5,9 +5,10 @@ include '../../backend/user/job_form.php';
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Document</title>
+    <title>Job Form</title>
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/form.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
 </head>
 <body>
 

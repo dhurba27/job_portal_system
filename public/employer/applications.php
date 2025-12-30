@@ -7,8 +7,9 @@ include '../../backend/employer/applications.php';
 <html>
 
 <head>
-    <title>Applications - Employer Dashboard</title>
+    <title>Applications</title>
     <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
     <link rel="stylesheet" href="../../css/user/applications.css">
 </head>
 

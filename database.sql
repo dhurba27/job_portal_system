@@ -11,6 +11,6 @@ created_by int not null, foreign key(created_by) references Users(user_id));
 
 create table Application (application_id int primary key auto_increment, name varchar(255) not null, 
 email varchar(255) not null, contact varchar(255) not null,
-address varchar(255) not null, cover_letter text not null, cv_path varchar(255) not null, 
-applied_on timestamp DEFAULT CURRENT_TIMESTAMP, applied_by int not null,
+address varchar(255) not null, cover_letter text not null, cv_path varchar(255) not null,
+status enum('Pending', 'Approved', 'Rejected') default 'Pending', applied_on timestamp DEFAULT CURRENT_TIMESTAMP, applied_by int not null,
 job_id int not null, foreign key(applyed_by) references Users(user_id), foreign key(job_id) references Jobs(job_id));

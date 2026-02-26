@@ -32,7 +32,9 @@ include '../../backend/user/user_dashboard.php';
             <h3>Popular Jobs</h3>
 
             <div class="jobs_container">
+
                 <?php foreach($values as $value){ ?>
+
                     <div class="job_card" onclick="window.location.href='job_detail.php?id=<?= $value['job_id'] ?>'">
 
                         <div>

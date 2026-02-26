@@ -1,0 +1,27 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    padding: 36px;
+    margin: 100px 0;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    border-radius: 28px;
+    box-shadow: 0 30px 65px rgba(15, 23, 42, 0.15);
+    width: 80%;
+}
+
+.container>h2{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.info{
+    display: grid;
+    gap: 10px;
+}
+
+.cover_letter{
+    margin: 25px 0;
+}

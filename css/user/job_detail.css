@@ -43,12 +43,12 @@ body {
     justify-content: end;
 }
 
-.job_info {
+.job_info, .job_status_info {
     display: flex;
     gap: 40px;
 }
 
-.job_type{
+.job_type, .job_status{
     background: rgba(34, 197, 94, 0.15);
     padding: 5px 10px;
     border-radius: 20px;

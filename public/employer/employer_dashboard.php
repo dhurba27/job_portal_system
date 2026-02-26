@@ -24,8 +24,13 @@ include '../../backend/employer/employer_dashboard.php';
                 <div class="jobs_container">
                     <?php foreach($values as $value){ ?>
                         <div class="job_card" onclick="window.location.href='job_detail.php?id=<?= $value['job_id'] ?>'">
-                            <div>
-                                <span class="job_type"><?php echo $value['job_type'] ?></span>
+                            <div class="job_status_info">
+                                <div>
+                                    <span class="job_type"><?php echo $value['job_type'] ?></span>
+                                </div>
+                                <div>
+                                    <span class="job_status"><?php echo $value['status'] ?></span>
+                                </div>
                             </div>
                             <h3><?php echo $value['job_title'] ?></h3>
                             <div class="location_container">

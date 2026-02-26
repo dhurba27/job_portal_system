@@ -19,11 +19,16 @@ include '../../backend/employer/job_detail.php';
         <div class="job_detail_container">
             <img src="../../image/<?php echo $value['image'] ?>" alt="image" class="company_logo">
             <div class="job_detail">
-                <h3><?= $value['job_title'] ?></h3>
-                <div class="job_info">
+                <div class="job_status_info">
+                    <h3><?= $value['job_title'] ?></h3>
                     <div>
                         <span class="job_type"><?= $value['job_type'] ?></span>
                     </div>
+                    <div>
+                        <span class="job_status"><?= $value['status'] ?></span>
+                    </div>
+                </div>
+                <div class="job_info">
                     <div>
                         <img src="../../icons/pin.png" alt="" class="location_icon">
                         <?= $value['location'] ?>
@@ -51,7 +56,29 @@ include '../../backend/employer/job_detail.php';
             onclick="window.location.href = 'applications.php?id=<?= $id ?>&job=<?= $value['job_title'] ?>'">
                 View Applications
             </button>
+            
+            <?php if($value['status'] === 'Active') { ?>
+
+                <button onclick="statusChange('Suspended',<?= $id ?>)" class="button">Suspend</button>
+                <button onclick="statusChange('Closed',<?= $id ?>)" class="button">Close</button>
+
+            <?php } else if($value['status'] === 'Suspended') { ?>
+
+                <button onclick="statusChange('Active',<?= $id ?>)" class="button">Activate</button>
+                <button onclick="statusChange('Closed',<?= $id ?>)" class="button">Closed</button>
+
+            <?php } else if($value['status'] === 'Draft') { ?>
+
+                <button onclick="statusChange('Active',<?= $id ?>)" class="button">Activate</button>
+
+            <?php } ?>
+            
         </div>
     </div>
+    <script>
+        function statusChange(action, id){
+            window.location.href = "job_detail.php?id="+id+"&action="+action;
+        }
+    </script>
 </body>
 </html>

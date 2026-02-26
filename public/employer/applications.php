@@ -10,7 +10,7 @@ include '../../backend/employer/applications.php';
     <title>Applications</title>
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/navbar.css">
-    <link rel="stylesheet" href="../../css/user/applications.css">
+    <link rel="stylesheet" href="../../css/employer/applications.css">
 </head>
 
 <body>

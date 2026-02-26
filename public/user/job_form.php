@@ -16,7 +16,7 @@ include '../../backend/user/job_form.php';
 
     <div class="container">
         <h3>Job Form</h3>        
-        <form class="label_form" action="" method="post">
+        <form class="label_form" action="" method="post" enctype="multipart/form-data">
             <div>
                 <label for="name">Full Name</label>  
                 <input type="text" id="name" name="name" required>

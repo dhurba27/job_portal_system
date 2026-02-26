@@ -1,7 +1,6 @@
 <?php 
 session_start(); 
 include '../../backend/user/jobs.php';
-include '../../backend/user/jobs_search.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,25 +17,26 @@ include '../../backend/user/jobs_search.php';
 
     <div class="jobs-hero">
         <div class="search_container">
+
             <h1>Find a role that matches your ambition</h1>
-            <form action="">
-                <input type="text" name="search" placeholder="job title" value="<?= $value ?? '' ?>">
+
+            <form action="" method="GET">
+                <input type="text" name="search" placeholder="job title" value="<?= $search ?>">
     
-                <input type="text" name="location" list="location_list" autocomplete="off" placeholder="location">
-                <datalist  id="location_list">
-                    <?php foreach($location_values as $value) { ?>
-                    <option value="<?= $value['location'] ?>">
-                    <?php } ?>
-                </datalist>
+                <input type="text" name="location" placeholder="location" value="<?= $location ?>">
 
                 <div class="select-div">
-                    <select name="" id="">
-                        <option value="null">category</option>
-                        <?php foreach($category_values as $value) { ?>
-                            <option value=""><?= $value['job_type'] ?></option>
-                        <?php } ?>
+                    <select name="job_type">
+                        <option value="">Category</option>
+                        <option value="Full-Time" <?= $category == 'Full-Time' ? 'selected' : '' ?>>
+                            Full Time
+                        </option>
+                        <option value="Part-Time" <?= $category == 'Part-Time' ? 'selected' : '' ?>>
+                            Part Time
+                        </option>
                     </select>
                 </div>
+
                 <button class="search_button" type="submit">search</button>
             </form>
         </div>
@@ -44,13 +44,19 @@ include '../../backend/user/jobs_search.php';
 
     <div class="jobs_background">
         <div class="container">
+
             <h3>Jobs</h3>
+
             <div class="jobs_container">
+
                 <?php foreach($values as $value){ ?>
+
                     <div class="job_card" onclick="window.location.href='job_detail.php?id=<?= $value['job_id'] ?>'">
+
                         <div>
                             <span class="job_type"><?php echo $value['job_type'] ?></span>
                         </div>
+
                         <h3><?php echo $value['job_title'] ?></h3>
 
                         <div class="location_container">

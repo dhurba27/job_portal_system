@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../../css/styles.css">
   <link rel="stylesheet" href="../../css/icon.css">
   <link rel="stylesheet" href="../../css/form.css">
+  <link rel="stylesheet" href="../../css/verification/signup.css">
 </head>
 
 <body>

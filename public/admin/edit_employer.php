@@ -11,6 +11,7 @@ include '../../backend/admin/edit_employer.php';
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/navbar.css">
     <link rel="stylesheet" href="../../css/form.css">
+    <link rel="stylesheet" href="../../css/admin/edit_employer.css">
 </head>
 
 <body>
@@ -24,14 +25,14 @@ include '../../backend/admin/edit_employer.php';
         <form class="label_form" id="form" action="" method="POST">
 
             <div>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" value="<?= htmlspecialchars($name_value) ?>" required>
+                <label class="label" for="name">Name</label>
+                <input class="input" type="text" id="name" name="name" value="<?= htmlspecialchars($name_value) ?>" required>
                 <div class="error" id="nameError"></div>
             </div>
 
             <div>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" value="<?= htmlspecialchars($email_value) ?>" required>
+                <label class="label" for="email">Email</label>
+                <input class="input" type="email" id="email" name="email" value="<?= htmlspecialchars($email_value) ?>" required>
                 <div class="error" id="emailError">
                     <?= $_SESSION['email_error'] ?? ''; ?>
                 </div>

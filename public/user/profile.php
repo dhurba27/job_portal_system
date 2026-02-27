@@ -1,7 +1,17 @@
 <?php
 session_start();
 include '../../backend/db.php';
+
+$user_id = $_SESSION['user_id'];
+$sql = $conn -> prepare("select * from users left join profiles on profiles.user_id = users.user_id where users.user_id = ?");
+$sql->bind_param("i", $user_id);
+$sql -> execute();
+$result = $sql -> get_result();
+$value = $result->fetch_assoc();
+$sql->close();
+
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,25 +26,22 @@ include '../../backend/db.php';
     <div class="profile_container">
         <div class="profile_image">
             <img src="../../image/01.jpg" alt="">
-            <button class="profile_edit_button">Edit Profile</button>
+            <a href="edit_profile.php" class="profile_edit_button">Edit Profile</a>
         </div>
         <div class="profile_info">
             <div class="basic_info">
                 <div>
-                    <h1>Dhurba Pandey</h1>
+                    <h1><?= htmlspecialchars($value['name']) ?></h1>
                 </div>
                 <div>
                     <p class="bio">
-                        I'm a Senior Software Developer with 8+ years in creating scalable web apps, 
-                        focusing on user experience and security. 
-                        I love contributing to open-source projects and solving complex tech challenges. 
-                        Let's connect!
+                        <?= htmlspecialchars($value['bio'] ?? 'No bio added yet.') ?>
                     </p>
                 </div>
                 <div class="info">
-                    <h4>example@gamil.com</h4>
-                    <h4>Kathmandu, Balaju</h4>
-                    <h4>+9867565656</h4>
+                    <h4><?= htmlspecialchars($value['email']) ?></h4>
+                    <h4><?= htmlspecialchars($value['address'] ?? 'Not provided') ?></h4>
+                    <h4><?= htmlspecialchars($value['contact'] ?? 'Not provided') ?></h4>
                 </div>
             </div>
     </div>

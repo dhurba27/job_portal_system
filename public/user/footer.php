@@ -6,7 +6,9 @@
             <ul class="list">
                 <li><a href="user_dashboard.php">Home</a></li>
                 <li><a href="jobs.php">Jobs</a></li>
-                <li><a href="application.php">Applications</a></li>
+                <?php if(isset($_SESSION['user_role'])){ ?>
+                    <li><a href="application.php">Applications</a></li>
+                <?php } ?>
             </ul>
         </div>
         <div>

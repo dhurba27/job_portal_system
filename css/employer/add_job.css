@@ -1,0 +1,26 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 60%;
+  background-color: white;
+  padding: 36px;
+  margin: 100px 0;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 28px;
+  box-shadow: 0 30px 65px rgba(15, 23, 42, 0.15);
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+
+
+.label_form, .form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}

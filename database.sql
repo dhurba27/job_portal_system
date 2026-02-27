@@ -14,3 +14,12 @@ email varchar(255) not null, contact varchar(255) not null,
 address varchar(255) not null, cover_letter text not null, cv_path varchar(255) not null,
 status enum('Pending', 'Approved', 'Rejected') default 'Pending', applied_on timestamp DEFAULT CURRENT_TIMESTAMP, applied_by int not null,
 job_id int not null, foreign key(applyed_by) references Users(user_id), foreign key(job_id) references Jobs(job_id));
+
+CREATE TABLE profiles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT UNIQUE,
+    bio TEXT,
+    address VARCHAR(255),
+    contact VARCHAR(20),
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);

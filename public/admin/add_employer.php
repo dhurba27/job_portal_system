@@ -10,6 +10,7 @@ include '../../backend/admin/add_employer.php';
   <link rel="stylesheet" href="../../css/styles.css">
   <link rel="stylesheet" href="../../css/navbar.css">
   <link rel="stylesheet" href="../../css/icon.css">
+  <link rel="stylesheet" href="../../css/admin/add_employer.css">
   <link rel="stylesheet" href="../../css/form.css">
 </head>
 

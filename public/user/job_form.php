@@ -8,6 +8,7 @@ include '../../backend/user/job_form.php';
     <title>Job Form</title>
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/form.css">
+    <link rel="stylesheet" href="../../css/user/job_form.css">
     <link rel="stylesheet" href="../../css/navbar.css">
 </head>
 <body>
@@ -17,7 +18,7 @@ include '../../backend/user/job_form.php';
     <div class="container">
         <h3>Job Form</h3>        
         <form class="label_form" action="" method="post" enctype="multipart/form-data">
-            <div>
+            <!-- <div>
                 <label for="name">Full Name</label>  
                 <input type="text" id="name" name="name" required>
             </div>
@@ -32,14 +33,14 @@ include '../../backend/user/job_form.php';
             <div>
                 <label for="address">Address</label>
                 <input type="tel" id="address" name="address" required>
+            </div> -->
+            <div>
+                <label class="label" for="letter">Cover Letter</label>
+                <textarea class="textarea" name="letter" id="letter" rows="8"></textarea> 
             </div>
             <div>
-                <label for="letter">Cover Letter</label>
-                <textarea name="letter" id="letter" rows="8"></textarea> 
-            </div>
-            <div>
-                <label for="cv">Upload CV</label>
-                <input type="file" id="cv" name="cv" required>
+                <label class="label" for="cv">Upload CV (only PDF)</label>
+                <input class="input" type="file" id="cv" name="cv" required>
             </div>
             <div>
                 <button class="button" type="submit">Submit</button>

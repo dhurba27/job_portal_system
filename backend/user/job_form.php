@@ -1,13 +1,32 @@
 <?php
 include '../../backend/db.php';
+
+if(!isset($_SESSION['user_role'])){
+    header("Location: ../verification/login.php");
+    exit();
+}
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $id = $_GET['id'];
+    $applied_by = $_SESSION['user_id'];
+
+    $sql = $conn->prepare("SELECT bio, address, contact FROM profiles WHERE user_id = ?");
+    $sql->bind_param("i", $applied_by);
+    $sql->execute();
+    $result = $sql->get_result();
+    $profile = $result->fetch_assoc();
+    $sql->close();
+
+    if(!$profile){
+        header("Location: profile.php?error=incomplete");
+        exit();
+    }
+
     $name = trim($_POST['name']);
     $email = trim($_POST['email']);
     $contact = trim($_POST['contact']);
     $address = trim($_POST['address']);
     $cover_letter = trim($_POST['letter']);
-    $applied_by = $_SESSION['user_id'];
 
     if (isset($_FILES['cv']) && $_FILES['cv']['error'] == 0) {
 

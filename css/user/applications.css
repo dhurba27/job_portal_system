@@ -1,3 +1,6 @@
+body{
+    background-color: #f1f5f9;
+}
 
 .container{
     margin-top: 75px;
@@ -23,6 +26,7 @@
     width: 300px;
     cursor: pointer;
     transition: 400ms ease;
+    background-color: #fff;
 }
 
 .application_job_card:hover{

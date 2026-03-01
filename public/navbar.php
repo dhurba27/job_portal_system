@@ -15,6 +15,7 @@
                 </button>
                 <div class="nav_profile_menu" id="nav_profile_menu">
                     <a href="profile.php">Profile</a>
+                    <a href="account_setting.php">Account Setting</a>
                     <a href='../../backend/logout.php'>Logout</a>
                 </div>
             </div>

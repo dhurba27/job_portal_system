@@ -26,7 +26,7 @@ $sql->close();
     <div class="profile_container">
         <div class="profile_image">
             <img src="../../image/01.jpg" alt="">
-            <a href="edit_profile.php" class="profile_edit_button">Edit Profile</a>
+            <a class="change_photo_button">Change Photo</a>
         </div>
         <div class="profile_info">
             <div class="basic_info">
@@ -39,11 +39,12 @@ $sql->close();
                     </p>
                 </div>
                 <div class="info">
-                    <h4><?= htmlspecialchars($value['email']) ?></h4>
-                    <h4><?= htmlspecialchars($value['address'] ?? 'Not provided') ?></h4>
-                    <h4><?= htmlspecialchars($value['contact'] ?? 'Not provided') ?></h4>
+                    <h4><img src="../../icons/email.png" alt="" class="icon"><?= htmlspecialchars($value['email']) ?></h4>
+                    <h4><img src="../../icons/pin.png" alt="" class="icon"><?= htmlspecialchars($value['address'] ?? 'Not provided') ?></h4>
+                    <h4><img src="../../icons/phone.png" alt="" class="icon"><?= htmlspecialchars($value['contact'] ?? 'Not provided') ?></h4>
                 </div>
             </div>
+            <a href="edit_profile.php" class="profile_edit_button">Edit Profile</a>
     </div>
 </body>
 </html>

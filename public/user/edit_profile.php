@@ -9,15 +9,13 @@ if(!isset($_SESSION['user_id'])){
 
 $user_id = $_SESSION['user_id'];
 
-// Fetch existing profile
-$sql = $conn->prepare("SELECT * FROM profiles WHERE user_id = ?");
+$sql = $conn -> prepare("select * from profiles where user_id = ?");
 $sql->bind_param("i", $user_id);
 $sql->execute();
 $result = $sql->get_result();
 $profile = $result->fetch_assoc();
 $sql->close();
 
-// Handle form submit
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     $bio = trim($_POST['bio']);
@@ -25,14 +23,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $contact = trim($_POST['contact']);
 
     if($profile){
-        // Update
-        $update = $conn->prepare("UPDATE profiles SET bio=?, address=?, contact=? WHERE user_id=?");
+
+        $update = $conn->prepare("update profiles SET bio=?, address=?, contact=? WHERE user_id=?");
         $update->bind_param("sssi", $bio, $address, $contact, $user_id);
         $update->execute();
         $update->close();
     } else {
-        // Insert
-        $insert = $conn->prepare("INSERT INTO profiles (user_id, bio, address, contact) VALUES (?, ?, ?, ?)");
+
+        $insert = $conn->prepare("insert into profiles (user_id, bio, address, contact) VALUES (?, ?, ?, ?)");
         $insert->bind_param("isss", $user_id, $bio, $address, $contact);
         $insert->execute();
         $insert->close();
@@ -49,56 +47,43 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <title>Edit Profile</title>
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/navbar.css">
-    <link rel="stylesheet" href="../../css/user/profile.css">
+    <link rel="stylesheet" href="../../css/user/edit_profile.css">
     <link rel="stylesheet" href="../../css/form.css">
-    <style>
-
-
-    </style>
 </head>
 <body>
 
 <?php include '../navbar.php' ?>
 
-<div class="profile_container">
+<div class="edit_profile_container">
 
     <div class="profile_image">
         <img src="../../image/01.jpg" alt="">
     </div>
 
-    <div class="profile_info">
-        <form method="POST" class="label_form">
+    <form method="POST" class="label_form">
 
-            <h1>Edit Profile</h1>
+        <h1>Edit Profile</h1>
 
-            <div>
-                <label>Name</label>
-                <input type="text" name="name">
-            </div>
+        <div>
+            <label class="label" for="bio">Bio</label>
+            <textarea class="textarea" name="bio" id="bio" rows="4" required><?= htmlspecialchars($profile['bio'] ?? '') ?></textarea>
+        </div>
 
-            <div>
-                <label>Bio</label>
-                <textarea name="bio" rows="4"><?= htmlspecialchars($profile['bio'] ?? '') ?></textarea>
-            </div>
+        <div>
+            <label class="label" for="address">Address</label>
+            <input class="input" type="text" name="address" id="address" value="<?= htmlspecialchars($profile['address'] ?? '') ?>" required>
+        </div>
 
-            <div>
-                <label>Address</label>
-                <input type="text" name="address"
-                       value="<?= htmlspecialchars($profile['address'] ?? '') ?>">
-            </div>
+        <div>
+            <label class="label" for="contact">Contact</label>
+            <input class="input" type="text" name="contact" id="contact" value="<?= htmlspecialchars($profile['contact'] ?? '') ?>" required>
+        </div>
 
-            <div>
-                <label>Contact</label>
-                <input type="text" name="contact"
-                       value="<?= htmlspecialchars($profile['contact'] ?? '') ?>">
-            </div>
+        <button type="submit" class="profile_edit_button">
+            Save Changes
+        </button>
 
-            <button type="submit" class="profile_edit_button">
-                Save Changes
-            </button>
-
-        </form>
-    </div>
+    </form>
 
 </div>
 

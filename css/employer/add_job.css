@@ -19,7 +19,7 @@ body {
 }
 
 
-.label_form, .form {
+.label_form{
   display: flex;
   flex-direction: column;
   gap: 30px;

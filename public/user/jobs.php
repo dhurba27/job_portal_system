@@ -20,7 +20,7 @@ include '../../backend/user/jobs.php';
 
             <h1>Find a role that matches your ambition</h1>
 
-            <form action="" method="GET">
+            <form action="#search_result" method="GET">
                 <input type="text" name="search" placeholder="job title" value="<?= $search ?>">
     
                 <input type="text" name="location" placeholder="location" value="<?= $location ?>">
@@ -42,7 +42,7 @@ include '../../backend/user/jobs.php';
         </div>
     </div>
 
-    <div class="jobs_background">
+    <div class="jobs_background" id="search_result">
         <div class="container">
 
             <h3>Jobs</h3>

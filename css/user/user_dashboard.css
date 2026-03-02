@@ -63,7 +63,7 @@
 }
 
 .container{
-    width: 1160px;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -73,7 +73,7 @@
 
 .jobs_container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     justify-items: center;
     row-gap: 50px;
     padding-top: 25px;

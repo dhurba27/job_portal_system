@@ -5,8 +5,12 @@
 
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 .search_container {
-    max-width: 1160px;
+    width: 80%;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -74,10 +78,11 @@ textarea {
 .jobs_background{
     background: #fff;
     padding: 50px 0;
+    scroll-margin-top: 76px;
 }
 
 .container{
-    width: 1160px;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -87,7 +92,7 @@ textarea {
 
 .jobs_container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     justify-items: center;
     row-gap: 35px;
     padding-top: 25px;

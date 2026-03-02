@@ -1,5 +1,6 @@
 <?php
 session_start();
+include '../../backend/db.php';
 include '../../backend/user/user_dashboard.php';
 ?>
 <!DOCTYPE html>
@@ -20,7 +21,7 @@ include '../../backend/user/user_dashboard.php';
 
     <div class="search-container">
         <h1>Take the next step in <br> your career journey.</h1>
-        <form method="GET" action="jobs.php">
+        <form method="GET" action="jobs.php#search_result">
             <input type="text" name="search" placeholder="Search for jobs" required>
             <button type="submit"><img src="../../icons/search.png" alt="Search"></button>
         </form>
@@ -29,7 +30,7 @@ include '../../backend/user/user_dashboard.php';
     <div class="jobs_background">
         <div class="container">
 
-            <h3>Popular Jobs</h3>
+            <h3>Jobs</h3>
 
             <div class="jobs_container">
 

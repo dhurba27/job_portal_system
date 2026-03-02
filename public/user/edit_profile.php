@@ -57,7 +57,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 <div class="edit_profile_container">
 
     <div class="profile_image">
-        <img src="../../image/01.jpg" alt="">
+        <img src="../../uploads/images/<?= htmlspecialchars($profile['photo'] ?? 'default.jpg') ?>" alt="Profile Photo">
     </div>
 
     <form method="POST" class="label_form">

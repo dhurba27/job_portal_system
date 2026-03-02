@@ -21,5 +21,6 @@ CREATE TABLE profiles (
     bio TEXT,
     address VARCHAR(255),
     contact VARCHAR(20),
+    photo VARCHAR(255),
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );

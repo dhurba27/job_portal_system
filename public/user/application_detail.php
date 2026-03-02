@@ -39,7 +39,7 @@ $sql->close();
             <?= $value['cover_letter'] ?>
         </p>
         <div>
-            <iframe src="../../uploads/<?= $value['cv_path'] ?>" width="100%" height="600px"></iframe>
+            <iframe src="../../uploads/files/<?= $value['cv_path'] ?>" width="100%" height="600px"></iframe>
         </div>
     </div>
 </body>

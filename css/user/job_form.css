@@ -23,3 +23,10 @@ body {
   flex-direction: column;
   gap: 30px;
 }
+
+.error {
+  margin-left: 16px;
+  color: red;
+  font-size: 14px;
+  padding-top: 5px;
+}

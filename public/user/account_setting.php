@@ -18,7 +18,7 @@ include '../../backend/user/account_setting.php';
 
     <div class="account_setting_container">
         <div class="profile_image">
-            <img src="../../image/01.jpg" alt="">
+            <img src="../../uploads/images/<?= htmlspecialchars($value['photo'] ?? 'default.jpg') ?>" alt="Profile Photo">
         </div>
 
         <div class="basic_info">

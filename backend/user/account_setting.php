@@ -18,7 +18,7 @@ if(isset($_POST['password_submit'])){
     $sql -> close();
 }
 
-$sql = $conn -> prepare("select * from users where user_id = ?");
+$sql = $conn -> prepare("select * from users left join profiles on profiles.user_id = users.user_id where users.user_id = ?");
 $sql->bind_param("i", $user_id);
 $sql -> execute();
 $result = $sql -> get_result();

@@ -1,15 +1,7 @@
 <?php
 session_start();
 include '../../backend/db.php';
-
-$user_id = $_SESSION['user_id'];
-$sql = $conn -> prepare("select * from users left join profiles on profiles.user_id = users.user_id where users.user_id = ?");
-$sql->bind_param("i", $user_id);
-$sql -> execute();
-$result = $sql -> get_result();
-$value = $result->fetch_assoc();
-$sql->close();
-
+include '../../backend/user/profile.php';
 ?>
 
 <!DOCTYPE html>
@@ -25,8 +17,16 @@ $sql->close();
 
     <div class="profile_container">
         <div class="profile_image">
-            <img src="../../image/01.jpg" alt="">
-            <a class="change_photo_button">Change Photo</a>
+            <img src="../../uploads/images/<?= htmlspecialchars($value['photo'] ?? 'default.jpg') ?>" alt="Profile Photo">
+
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" name="photo" id="photoInput" hidden>
+                <button type="button" class="change_photo_button" id="changePhotoBtn">
+                    Change Photo
+                </button>
+                <input type="submit" name="photo_submit" hidden id="photoSubmit">
+            </form>
+
         </div>
         <div class="profile_info">
             <div class="basic_info">
@@ -46,5 +46,6 @@ $sql->close();
             </div>
             <a href="edit_profile.php" class="profile_edit_button">Edit Profile</a>
     </div>
+    <script src="../../js/change_photo.js"></script>
 </body>
 </html>

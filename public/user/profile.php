@@ -29,6 +29,12 @@ include '../../backend/user/profile.php';
 
         </div>
         <div class="profile_info">
+            <?php
+                if(isset($_GET['error']) && $_GET['error'] == 'incomplete'){
+            ?>
+                <h3 class="error">Profile must be complete to apply for job.</h3> 
+            <?php } ?>
+
             <div class="basic_info">
                 <div>
                     <h1><?= htmlspecialchars($value['name']) ?></h1>
@@ -45,6 +51,7 @@ include '../../backend/user/profile.php';
                 </div>
             </div>
             <a href="edit_profile.php" class="profile_edit_button">Edit Profile</a>
+        </div>
     </div>
     <script src="../../js/change_photo.js"></script>
 </body>

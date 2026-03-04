@@ -17,16 +17,16 @@ include '../../backend/user/job_detail.php';
     <div class="container">
 
         <div class="job_detail_container">
-            <img src="../../image/<?php echo $value['image'] ?>" alt="image" class="company_logo">
+            <img src="../../uploads/images/<?= $value['image'] ?>" alt="image" class="company_logo">
             <div class="job_detail">
-                <h3><?= $value['job_title'] ?></h3>
+                <h3><?= htmlspecialchars($value['job_title']) ?></h3>
                 <div class="job_info">
                     <div>
-                        <span class="job_type"><?= $value['job_type'] ?></span>
+                        <span class="job_type"><?= htmlspecialchars($value['job_type']) ?></span>
                     </div>
                     <div>
                         <img src="../../icons/pin.png" alt="" class="location_icon">
-                        <?= $value['location'] ?>
+                        <?= htmlspecialchars($value['location']) ?>
                     </div>
                     <div>
                         <b>Posted:</b> <?= date("F j, Y", strtotime($value['posted_on'])) ?>
@@ -38,12 +38,18 @@ include '../../backend/user/job_detail.php';
             </div>
         </div>
 
-        <div>
-            <?= $value['job_description'] ?>
+        <div class="job_section">
+            <h4>Job Description</h4>
+            <p class="job_text">
+                <?= nl2br(htmlspecialchars($value['job_description'])) ?>
+            </p>
         </div>
 
-        <div>
-            <?= $value['job_requirement'] ?>
+        <div class="job_section">
+            <h4>Job Requirements</h4>
+            <p class="job_text">
+                <?= nl2br(htmlspecialchars($value['job_requirement'])) ?>
+            </p>
         </div>
         
         <div>

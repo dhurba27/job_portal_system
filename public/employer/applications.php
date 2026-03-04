@@ -18,38 +18,38 @@ include '../../backend/employer/applications.php';
     <?php include '../navbar.php' ?>
 
     <div class="container">
-        <h2>Applications for <?= $job_title ?></h2>
-        <div class="table_container">
+        <h2>Applications</h2>
 
-            <?php if(!empty($values)) { ?>
-                <div class="title">
-                    <div>Applicant Name</div>
-                    <div>Email</div>
-                    <div>Contact</div>
-                    <div>Address</div>
-                    <div>Status</div>
-                    <div>Action</div>
-                </div>
-                <div class="info_container">
-                    <?php foreach($values as $value) { ?>
-            
-                        <div class="info">
-                            <div><?= $value['name'] ?></div>
-                            <div><?= $value['email'] ?></div>
-                            <div><?= $value['contact'] ?></div>
-                            <div><?= $value['address'] ?></div>
-                            <div>Status</div>
-                            <div>
-                                view details
-                            </div>
-                        </div>
-            
+        <?php if (!empty($values)) { ?>
+        <div class="table_container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Applicant Name</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($values as $value) { ?>
+                        <tr>
+                            <td><?= htmlspecialchars($value['name']) ?></td>
+                            <td><?= htmlspecialchars($value['email']) ?></td>
+                            <td><?= htmlspecialchars($value['contact']) ?></td>
+                            <td><?= htmlspecialchars($value['address']) ?></td>
+                            <td class="<?= $value['status'] ?>"><?= htmlspecialchars($value['status']) ?></td>
+                            <td><a class="view_detail" href="application_detail.php?id=<?= $value['application_id'] ?>">View Details</a></td>
+                        </tr>
                     <?php } ?>
-                </div>
-            <?php } else { ?>
-                <div>No application</div>
-            <?php } ?>
+                </tbody>
+            </table>
         </div>
+        <?php } else { ?>
+            <p>No applications found.</p>
+        <?php } ?>
     </div>
 
 </body>

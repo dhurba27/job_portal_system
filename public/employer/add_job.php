@@ -19,7 +19,7 @@ include '../../backend/employer/add_job.php';
 
     <div class="container">
         <h2>Add New Job</h2>
-        <form class="label_form" method="POST">
+        <form class="label_form" method="POST" enctype="multipart/form-data">
             <div>
                 <label class="label" for="title">Job Title</label>
                 <input class="input" type="text" name="title" id="title" required>
@@ -38,8 +38,8 @@ include '../../backend/employer/add_job.php';
             <div>
                 <label class="label" for="job_type">Job Type</label>
                 <div  class="select-div">
-                    <select name="job_type" id="job_type">
-                        <option value="null">Job Type</option>
+                    <select name="job_type" id="job_type" required>
+                        <option value="" disabled selected>Select Job Type</option>
                         <option value="Full-Time">Full Time</option>
                         <option value="Part-Time">Part Time</option>
                     </select>
@@ -63,12 +63,12 @@ include '../../backend/employer/add_job.php';
 
             <div>
                 <label class="label" for="deadlin">Deadline</label>
-                <input class="input" type="date" name="deadline" id="deadline" required>
+                <input class="input" type="date" name="deadline" id="deadline" min="<?= date('Y-m-d'); ?>" required>
             </div>
 
             <div>
                 <label class="label" for="image">Logo</label>
-                <input class="input" class="input" type="file" name="image" id="image">
+                <input class="input" type="file" name="image" id="image">
             </div>
 
             <button class="button" type="submit">Add Job</button>

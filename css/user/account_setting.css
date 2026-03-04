@@ -43,6 +43,7 @@ body {
     font-size: 14px;
     color: #334155;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .info.hide{
@@ -62,6 +63,7 @@ body {
     gap: 50px;
     align-items: start;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .input_div{

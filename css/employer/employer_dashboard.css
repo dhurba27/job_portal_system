@@ -9,16 +9,20 @@ body {
 }
 
 .container{
-    width: 1160px;
+    width: 80%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
+.header{
+    text-align: center;
+}
+
 .jobs_container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     justify-items: center;
     row-gap: 50px;
     padding-top: 25px;
@@ -42,6 +46,3 @@ body {
     background: green;
 }
 
-.delete{
-    background: red;
-}

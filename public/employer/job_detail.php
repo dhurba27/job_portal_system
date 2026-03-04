@@ -17,21 +17,21 @@ include '../../backend/employer/job_detail.php';
     <div class="container">
 
         <div class="job_detail_container">
-            <img src="../../image/<?php echo $value['image'] ?>" alt="image" class="company_logo">
+            <img src="../../uploads/images/<?= $value['image'] ?>" alt="image" class="company_logo">
             <div class="job_detail">
                 <div class="job_status_info">
-                    <h3><?= $value['job_title'] ?></h3>
+                    <h3><?= htmlspecialchars($value['job_title']) ?></h3>
                     <div>
-                        <span class="job_type"><?= $value['job_type'] ?></span>
+                        <span class="job_type"><?= htmlspecialchars($value['job_type']) ?></span>
                     </div>
                     <div>
-                        <span class="job_status"><?= $value['status'] ?></span>
+                        <span class="job_status"><?= htmlspecialchars($value['status']) ?></span>
                     </div>
                 </div>
                 <div class="job_info">
                     <div>
                         <img src="../../icons/pin.png" alt="" class="location_icon">
-                        <?= $value['location'] ?>
+                        <?= htmlspecialchars($value['location']) ?>
                     </div>
                     <div>
                         <b>Posted:</b> <?= date("F j, Y", strtotime($value['posted_on'])) ?>
@@ -43,17 +43,23 @@ include '../../backend/employer/job_detail.php';
             </div>
         </div>
 
-        <div>
-            <?= $value['job_description'] ?>
+        <div class="job_section">
+            <h4>Job Description</h4>
+            <p class="job_text">
+                <?= nl2br(htmlspecialchars($value['job_description'])) ?>
+            </p>
         </div>
 
-        <div>
-            <?= $value['job_requirement'] ?>
+        <div class="job_section">
+            <h4>Job Requirements</h4>
+            <p class="job_text">
+                <?= nl2br(htmlspecialchars($value['job_requirement'])) ?>
+            </p>
         </div>
         
         <div>
             <button class="button" 
-            onclick="window.location.href = 'applications.php?id=<?= $id ?>&job=<?= $value['job_title'] ?>'">
+            onclick="window.location.href = 'applications.php?id=<?= $id ?>'">
                 View Applications
             </button>
             

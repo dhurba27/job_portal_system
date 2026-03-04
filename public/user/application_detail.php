@@ -23,20 +23,20 @@ $sql->close();
         <h2>Application</h2>
         <div class="info">
             <p>
-                <b>Name : </b><?= $value['name'] ?>
+                <b>Name : </b><?= htmlspecialchars($value['name']) ?>
             </p>
             <p>
-                <b>Email : </b><?= $value['email'] ?>
+                <b>Email : </b><?= htmlspecialchars($value['email']) ?>
             </p>
             <p>
-                <b>Contact : </b><?= $value['contact'] ?>
+                <b>Contact : </b><?= htmlspecialchars($value['contact']) ?>
             </p>
             <p>
-                <b>Address : </b><?= $value['address'] ?>
+                <b>Address : </b><?= htmlspecialchars($value['address']) ?>
             </p>
         </div>
         <p class="cover_letter">
-            <?= $value['cover_letter'] ?>
+            <?= htmlspecialchars($value['cover_letter']) ?>
         </p>
         <div>
             <iframe src="../../uploads/files/<?= $value['cv_path'] ?>" width="100%" height="600px"></iframe>

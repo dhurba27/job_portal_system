@@ -1,37 +1,34 @@
 <?php
-include '../../backend/db.php';
-
 if(isset($_GET['action'], $_GET['id'])){
     $action = $_GET['action'];
     $id = $_GET['id'];
 
-    if($action == 'Active'){
-        $active_sql = $conn -> prepare("update jobs set status = ? where job_id = ?");
+    if($action == 'Accepted'){
+        $active_sql = $conn -> prepare("update application set status = ? where application_id = ?");
         $active_sql -> bind_param("si", $action, $id);
         $active_sql -> execute();
         $active_sql -> close();
     }
 
-    if($action == 'Suspended'){
-        $active_sql = $conn -> prepare("update jobs set status = ? where job_id = ?");
+    if($action == 'Rejected'){
+        $active_sql = $conn -> prepare("update application set status = ? where application_id = ?");
         $active_sql -> bind_param("si", $action, $id);
         $active_sql -> execute();
         $active_sql -> close();
     }
 
-    if($action == 'Closed'){
-        $active_sql = $conn -> prepare("update jobs set status = ? where job_id = ?");
+    if($action == 'Pending'){
+        $active_sql = $conn -> prepare("update application set status = ? where application_id = ?");
         $active_sql -> bind_param("si", $action, $id);
         $active_sql -> execute();
         $active_sql -> close();
     }
 }
 
-
 $id = $_GET['id'];
-$sql = $conn -> prepare("select * from jobs where job_id = ?");
-$sql -> bind_param("i", $id);
-$sql -> execute();
+$sql = $conn->prepare("select * from application where application_id=?");
+$sql->bind_param("i",$id);
+$sql->execute();
 $result = $sql -> get_result();
 $value = $result -> fetch_assoc();
-$sql -> close();
+$sql->close();

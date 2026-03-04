@@ -7,7 +7,6 @@ if (!isset($_GET['id'])) {
 }
 
 $id = $_GET['id'];
-$job_title = $_GET['job'];
 
 $sql = $conn -> prepare("select * from application where job_id = ?");
 $sql -> bind_param("i", $id);

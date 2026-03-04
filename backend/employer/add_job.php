@@ -9,18 +9,27 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $requirement = trim($_POST['requirement']);
     $salary = trim($_POST['salary']);
     $deadline = $_POST['deadline'];
-    $image = trim($_POST['image']);
+    $newName = null;
+
+    if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
+        $file = $_FILES['image'];
+        $uploadDir = "../../uploads/images/";
+        $newName = time() . "_" . $file['name'];
+        $destination = $uploadDir . $newName;
+        move_uploaded_file($file['tmp_name'], $destination);
+    } 
 
     $sql = $conn -> prepare(
         'insert into Jobs 
         (job_title, company, location, job_type, job_description, job_requirement, salary, deadline, image, created_by)
         values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
     $sql -> bind_param("sssssssssi", $title, $company, $location, $job_type, 
-    $description, $requirement, $salary, $deadline, $image, $_SESSION["user_id"]);
+    $description, $requirement, $salary, $deadline, $newName, $_SESSION["user_id"]);
 
     if($sql -> execute()){
+        $job_id = $conn->insert_id;
         $sql -> close();
-        header("Location: employer_dashboard.php");
+        header("Location: job_detail.php?id=$job_id");
         exit();
     }
 }

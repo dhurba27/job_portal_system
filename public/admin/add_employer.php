@@ -58,23 +58,6 @@ include '../../backend/admin/add_employer.php';
 
         <div class="error" id="passwordError"></div>
       </div>      
-
-      <!-- <div>
-        <div class="select-div">
-          <select name="role" id="role">
-              <option value="null">Select User</option>
-              <option value="admin" 
-              <?php //($_SESSION['role'] ?? '' == 'admin') ? 'selected' : ''; ?>>
-                Admin
-              </option>
-              <option value="employer" 
-              <?php //($_SESSION['role'] ?? '' == 'employer') ? 'selected' : ''; ?>>
-                Employer
-              </option>
-          </select>
-        </div>
-        <div class="error" id="selectError"></div>
-      </div> -->
       
       <button class="button" type="submit">Create</button>
   
@@ -82,7 +65,6 @@ include '../../backend/admin/add_employer.php';
         unset($_SESSION['email_error']); 
         unset($_SESSION['name']); 
         unset($_SESSION['email']); 
-        // unset($_SESSION['role']);
       ?>
     </form>
 

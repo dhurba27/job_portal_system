@@ -2,7 +2,7 @@
 $user_id = $_SESSION['user_id'];
 
 if (isset($_POST['photo_submit']) && isset($_FILES['photo'])) {
-
+    
     $file = $_FILES['photo'];
 
     if ($file['error'] === 0) {

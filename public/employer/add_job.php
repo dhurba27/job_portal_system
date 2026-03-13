@@ -42,6 +42,9 @@ include '../../backend/employer/add_job.php';
                         <option value="" disabled selected>Select Job Type</option>
                         <option value="Full-Time">Full Time</option>
                         <option value="Part-Time">Part Time</option>
+                        <option value="Remote">Remote</option>
+                        <option value="Hybrid">Hybrid</option>
+                        <option value="Intership">Intership</option>
                     </select>
                 </div>
             </div>

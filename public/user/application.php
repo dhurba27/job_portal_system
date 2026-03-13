@@ -50,7 +50,7 @@ include '../../backend/user/application.php';
                             </div>
                         </div>
                     </div>
-                    <div class="status">
+                    <div class="status <?= strtolower($value['status']) ?>">
                         <?= $value['status'] ?>
                     </div>
                 </div>

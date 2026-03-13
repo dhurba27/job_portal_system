@@ -4,24 +4,24 @@ if(isset($_GET['action'], $_GET['id'])){
     $id = $_GET['id'];
 
     if($action == 'Accepted'){
-        $active_sql = $conn -> prepare("update application set status = ? where application_id = ?");
-        $active_sql -> bind_param("si", $action, $id);
-        $active_sql -> execute();
-        $active_sql -> close();
+        $accepted_sql = $conn -> prepare("update application set status = ? where application_id = ?");
+        $accepted_sql -> bind_param("si", $action, $id);
+        $accepted_sql -> execute();
+        $accepted_sql -> close();
     }
 
     if($action == 'Rejected'){
-        $active_sql = $conn -> prepare("update application set status = ? where application_id = ?");
-        $active_sql -> bind_param("si", $action, $id);
-        $active_sql -> execute();
-        $active_sql -> close();
+        $rejected_sql = $conn -> prepare("update application set status = ? where application_id = ?");
+        $rejected_sql -> bind_param("si", $action, $id);
+        $rejected_sql -> execute();
+        $rejected_sql -> close();
     }
 
     if($action == 'Pending'){
-        $active_sql = $conn -> prepare("update application set status = ? where application_id = ?");
-        $active_sql -> bind_param("si", $action, $id);
-        $active_sql -> execute();
-        $active_sql -> close();
+        $pending_sql = $conn -> prepare("update application set status = ? where application_id = ?");
+        $pending_sql -> bind_param("si", $action, $id);
+        $pending_sql -> execute();
+        $pending_sql -> close();
     }
 }
 

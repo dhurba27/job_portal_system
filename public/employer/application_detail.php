@@ -15,7 +15,7 @@ include '../../backend/employer/application_detail.php';
     <?php include "../navbar.php" ?>
     <div class="container">
         <div>
-            <button class="button" onclick="window.location.href='applications.php?id=<?= $value['job_id'] ?>'">Go Back</button>
+            <img src="../../icons/back.png" class="back_button" onclick="window.location.href='applications.php?id=<?= $value['job_id'] ?>'">
             <h2>Application</h2>
         </div>  
         

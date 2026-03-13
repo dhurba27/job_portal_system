@@ -36,8 +36,8 @@ include '../../backend/admin/admin_dashboard.php';
                             <td><?php echo htmlspecialchars($value['name']); ?></td>
                             <td><?php echo htmlspecialchars($value['email']); ?></td>
                             <td class="action">
-                                <a class="edit" href="edit_employer.php?id=<?php echo $value['user_id'] ?>">Edit</a>
-                                <a class="delete" href="delete_employer.php?id=<?php echo $value['user_id'] ?>">Delete</a>
+                                <a class="edit" href="edit_employer.php?id=<?= $value['user_id'] ?>">Edit</a>
+                                <a class="delete" href="admin_dashboard.php?id=<?= $value['user_id'] ?>&action=delete">Delete</a>
                             </td>
                         </tr>
                     <?php } ?>

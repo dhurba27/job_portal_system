@@ -11,6 +11,7 @@ include '../../backend/admin/edit_employer.php';
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/navbar.css">
     <link rel="stylesheet" href="../../css/form.css">
+    <link rel="stylesheet" href="../../css/icon.css">
     <link rel="stylesheet" href="../../css/admin/edit_employer.css">
 </head>
 
@@ -39,6 +40,16 @@ include '../../backend/admin/edit_employer.php';
             </div>
 
             <div>
+                <label class="input_container">
+                    <img src="../../icons/padlock.png" alt="">
+                    <input type="password" id="password" name="password" placeholder="New Password">
+                    <img src="../../icons/invisible.png" alt="image" id="invisible_icon">
+                </label>
+
+                <div class="error" id="passwordError"></div>
+            </div>  
+
+            <div>
                 <button class="button" type="submit">Submit</button>
             </div>
 
@@ -52,6 +63,7 @@ include '../../backend/admin/edit_employer.php';
     </div>
 
     <script src="../../js/form.js"></script>
+    <script src="../../js/password.js"></script>
 
 </body>
 

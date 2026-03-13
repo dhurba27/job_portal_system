@@ -5,8 +5,6 @@ const form = document.getElementById('form');
 const name_error = document.getElementById('nameError');
 const email_error = document.getElementById('emailError');
 const password_error = document.getElementById('passwordError');
-// const role = document.getElementById('role');
-// const selectError = document.getElementById('selectError');
 
 
 form.addEventListener('submit', function(e){
@@ -36,22 +34,15 @@ form.addEventListener('submit', function(e){
     }
 
     if(password){
-        if(password.value.length < 8 || password.value.length > 30){
-            password_error.innerText = "Password must be between 8 and 30 character";
-            valid = false;
-        } else {
-            password_error.innerText = '';
+        if(password.value.length > 0){
+            if(password.value.length < 8 || password.value.length > 30){
+                password_error.innerText = "Password must be between 8 and 30 character";
+                valid = false;
+            } else {
+                password_error.innerText = '';
+            }
         }
     }
-
-    // if(role){
-    //     if(role.value == "null"){
-    //         selectError.innerText = "select an option";
-    //         valid = false;
-    //     } else {
-    //         selectError.innerText = '';
-    //     }
-    // }
 
     if(!valid){
         e.preventDefault();

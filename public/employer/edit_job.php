@@ -45,6 +45,9 @@ include '../../backend/employer/edit_job.php';
                         <option value="" disabled selected>Select Job Type</option>
                         <option value="Full-Time" <?= $value['job_type'] == 'Full-Time' ? 'selected' : ''?>>Full Time</option>
                         <option value="Part-Time" <?= $value['job_type'] == 'Part-Time' ? 'selected' : ''?>>Part Time</option>
+                        <option value="Remote" <?= $value['job_type'] == 'Remote' ? 'selected' : ''?>>Remote</option>
+                        <option value="Hybrid" <?= $value['job_type'] == 'Hybrid' ? 'selected' : ''?>>Hybrid</option>
+                        <option value="Intership" <?= $value['job_type'] == 'Intership' ? 'selected' : ''?>>Intership</option>
                     </select>
                 </div>
             </div>

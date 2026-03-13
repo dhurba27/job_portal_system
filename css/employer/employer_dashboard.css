@@ -28,6 +28,57 @@ body {
     padding-top: 25px;
 }
 
+.employer_job_card{
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    width: 300px;
+    cursor: pointer;
+    transition: 400ms ease;
+    background-color: #fff;
+}
+
+.employer_job_card:hover{
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+    transform: translateY(-5px);
+}
+
+.status {
+    font-weight: bold;
+    color: #fff;
+    padding: 15px;
+    border-radius: 18px 18px 0 0;
+    text-align: center;
+}
+
+.status.draft{
+    background-color: #8b5cf6;
+}
+
+.status.active{
+    background-color: #22c55e;
+}
+
+.status.suspended{
+    background-color: #ef4444;
+}
+
+.status.closed{
+    background-color: #f59e0b;
+}
+
+.status.expired{
+    background-color: #64748b;
+}
+
+.job_detail{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px 24px;
+    cursor: pointer;
+}
+
 .action{
     display: flex;
     flex-direction: column;
@@ -43,6 +94,6 @@ body {
 }
 
 .edit{
-    background: green;
+    background: #0d6efd;
 }
 

@@ -63,7 +63,6 @@ body {
     gap: 50px;
     align-items: start;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .input_div{

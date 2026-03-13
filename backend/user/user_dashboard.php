@@ -11,7 +11,7 @@ $sql_update->bind_param("s", $currentDate);
 $sql_update->execute();
 $sql_update->close();
 
-$sql = $conn->prepare("select * from jobs where status = 'Active'");
+$sql = $conn->prepare("select * from jobs where status = 'Active' order by posted_on desc");
 $sql->execute();
 $result = $sql->get_result();
 $values = $result->fetch_all(MYSQLI_ASSOC);

@@ -24,9 +24,6 @@ include '../../backend/employer/job_detail.php';
                     <div>
                         <span class="job_type"><?= htmlspecialchars($value['job_type']) ?></span>
                     </div>
-                    <div>
-                        <span class="job_status"><?= htmlspecialchars($value['status']) ?></span>
-                    </div>
                 </div>
                 <div class="job_info">
                     <div>
@@ -57,26 +54,38 @@ include '../../backend/employer/job_detail.php';
             </p>
         </div>
         
-        <div>
-            <button class="button" 
-            onclick="window.location.href = 'applications.php?id=<?= $id ?>'">
-                View Applications
-            </button>
+        <div class="button_section">
             
             <?php if($value['status'] === 'Active') { ?>
-
-                <button onclick="statusChange('Suspended',<?= $id ?>)" class="button">Suspend</button>
-                <button onclick="statusChange('Closed',<?= $id ?>)" class="button">Close</button>
+            
+                <button class="button" 
+                onclick="window.location.href = 'applications.php?id=<?= $id ?>'">
+                    View Applications
+                </button>
+                <button onclick="statusChange('Suspended',<?= $id ?>)" class="button suspend">Suspend</button>
+                <button onclick="statusChange('Closed',<?= $id ?>)" class="button close">Close</button>
 
             <?php } else if($value['status'] === 'Suspended') { ?>
 
-                <button onclick="statusChange('Active',<?= $id ?>)" class="button">Activate</button>
-                <button onclick="statusChange('Closed',<?= $id ?>)" class="button">Closed</button>
+                <button class="button" 
+                onclick="window.location.href = 'applications.php?id=<?= $id ?>'">
+                    View Applications
+                </button>
+                <button onclick="statusChange('Active',<?= $id ?>)" class="button activate">Activate</button>
+                <button onclick="statusChange('Closed',<?= $id ?>)" class="button close">Close</button>
 
             <?php } else if($value['status'] === 'Draft') { ?>
 
-                <button onclick="statusChange('Active',<?= $id ?>)" class="button">Activate</button>
+                <button onclick="statusChange('Active',<?= $id ?>)" class="button activate">Activate</button>
+                <button onclick="window.location.href = 'job_detail.php?id=<?= $id ?>&action=delete'" class="button delete">Delete</button>
 
+            <?php } else { ?>
+
+                <button class="button" 
+                onclick="window.location.href = 'applications.php?id=<?= $id ?>'">
+                    View Applications
+                </button>
+                
             <?php } ?>
             
         </div>

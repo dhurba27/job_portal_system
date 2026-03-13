@@ -13,7 +13,6 @@
         $email = trim($_POST['email']);
         $password = password_hash(trim($_POST['password']), PASSWORD_DEFAULT);
         $user = 'employer';
-        //$user = trim($_POST['role']);
         
         $email_check = $conn -> prepare('select * from users where email = ?');
         $email_check -> bind_param('s', $email);
@@ -23,7 +22,6 @@
         if($result -> num_rows > 0) {
             $_SESSION['name'] = $name;
             $_SESSION['email'] = $email;
-            //$_SESSION['role'] = $user;
             $_SESSION['email_error'] = "This email is already used";
             header("Location: add_employer.php");
             exit();

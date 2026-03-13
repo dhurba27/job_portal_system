@@ -27,6 +27,8 @@ if(!empty($category)){
     $types .= "s";
 }
 
+$query .= " order by posted_on desc";
+
 $sql = $conn->prepare($query);
 
 if(!empty($params)){

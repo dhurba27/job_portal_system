@@ -27,7 +27,7 @@ include '../../backend/user/jobs.php';
 
                 <div class="select-div">
                     <select name="job_type">
-                        <option value="">Category</option>
+                        <option value="">Job Type</option>
                         <option value="Full-Time" <?= $category == 'Full-Time' ? 'selected' : '' ?>>
                             Full Time
                         </option>
@@ -49,34 +49,39 @@ include '../../backend/user/jobs.php';
 
             <div class="jobs_container">
 
-                <?php foreach($values as $value){ ?>
+                <?php if(!$values) { ?>
+                    <p>No result found.</p>
+                <?php } else { ?>
 
-                    <div class="job_card" onclick="window.location.href='job_detail.php?id=<?= $value['job_id'] ?>'">
+                    <?php foreach($values as $value){ ?>
 
-                        <div>
-                            <span class="job_type"><?= htmlspecialchars($value['job_type']) ?></span>
-                        </div>
+                        <div class="job_card" onclick="window.location.href='job_detail.php?id=<?= $value['job_id'] ?>'">
 
-                        <h3><?= htmlspecialchars($value['job_title']) ?></h3>
-
-                        <div class="location_container">
-                            <img src="../../icons/pin.png" alt="">
-                            <?= htmlspecialchars($value['location']) ?>
-                        </div> 
-
-                        <div class="job_card_footer">
-                            <img src="../../uploads/images/<?= $value['image'] ?>" alt="image" class="company_logo">
                             <div>
+                                <span class="job_type"><?= htmlspecialchars($value['job_type']) ?></span>
+                            </div>
+
+                            <h3><?= htmlspecialchars($value['job_title']) ?></h3>
+
+                            <div class="location_container">
+                                <img src="../../icons/pin.png" alt="">
+                                <?= htmlspecialchars($value['location']) ?>
+                            </div> 
+
+                            <div class="job_card_footer">
+                                <img src="../../uploads/images/<?= $value['image'] ?>" alt="image" class="company_logo">
                                 <div>
-                                    <?= date("F j, Y", strtotime($value['posted_on'])) ?>
-                                </div>
-                                <div class="company_name">
-                                    <?= htmlspecialchars($value['company']) ?>
+                                    <div>
+                                        <?= date("F j, Y", strtotime($value['posted_on'])) ?>
+                                    </div>
+                                    <div class="company_name">
+                                        <?= htmlspecialchars($value['company']) ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-               <?php } ?>
+                    <?php } ?>
+                <?php } ?>
             </div>
         </div>
     </div>

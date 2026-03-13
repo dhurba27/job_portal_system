@@ -20,7 +20,10 @@ $sql->close();
 <body>
     <?php include "../navbar.php" ?>
     <div class="container">
-        <h2>Application</h2>
+        <div>
+            <img src="../../icons/back.png" class="back_button" onclick="window.location.href='application.php'">
+            <h2>Application</h2>
+        </div>  
         <div class="info">
             <p>
                 <b>Name : </b><?= htmlspecialchars($value['name']) ?>

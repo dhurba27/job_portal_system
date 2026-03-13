@@ -51,6 +51,10 @@ include '../../backend/user/job_detail.php';
                 <?= nl2br(htmlspecialchars($value['job_requirement'])) ?>
             </p>
         </div>
+
+        <div>
+            <b>Salary:</b> <?= htmlspecialchars($value['salary']) ?>
+        </div>
         
         <div>
             <button class="button" onclick="window.location.href = 'job_form.php?id=<?= $id ?>'">Apply for job</button>

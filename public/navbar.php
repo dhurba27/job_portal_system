@@ -11,7 +11,7 @@
             
             <div class="nav_profile_container">
                 <button class="nav_profile_button" id="nav_profile_button">
-                    <img src="../../image/01.jpg" alt="profile">
+                    <img src="../../uploads/images/<?= $_SESSION['photo'] ?? 'default.jpg' ?>" alt="profile">
                 </button>
                 <div class="nav_profile_menu" id="nav_profile_menu">
                     <a href="profile.php">Profile</a>
@@ -36,6 +36,7 @@
             <a href="user_dashboard.php">Home</a>
             <a href="jobs.php">Jobs</a>
             <button class="nav_button" onclick="window.location.href='../verification/login.php'">Login</button>
+            <button class="nav_button" onclick="window.location.href='../verification/signup.php'">Sign up</button>
         <?php } ?>
 
     </div>

@@ -41,7 +41,7 @@ include '../../backend/employer/applications.php';
                             <td><?= htmlspecialchars($value['contact']) ?></td>
                             <td><?= htmlspecialchars($value['address']) ?></td>
                             <td class="<?= $value['status'] ?>"><?= htmlspecialchars($value['status']) ?></td>
-                            <td><a class="view_detail" href="application_detail.php?id=<?= $value['application_id'] ?>">View Details</a></td>
+                            <td><a class="view_detail" href="application_detail.php?id=<?= $value['application_id'] ?>&job_id=<?= $id ?>">View Details</a></td>
                         </tr>
                     <?php } ?>
                 </tbody>

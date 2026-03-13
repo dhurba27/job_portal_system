@@ -24,7 +24,7 @@ form.addEventListener('submit', function(e){
     }
 
     if(email){
-        const pattern = /^[a-zA-Z._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const pattern = /^[a-zA-Z][a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if(!pattern.test(email.value)){
             email_error.innerText = "Invalid Email";
             valid = false;

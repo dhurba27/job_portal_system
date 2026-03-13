@@ -32,7 +32,7 @@ include '../../backend/user/profile.php';
             <?php
                 if(isset($_GET['error']) && $_GET['error'] == 'incomplete'){
             ?>
-                <h3 class="error">Profile must be complete to apply for job.</h3> 
+                <h3 class="error">Profile must be complete first.</h3> 
             <?php } ?>
 
             <div class="basic_info">

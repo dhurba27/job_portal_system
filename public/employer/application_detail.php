@@ -42,28 +42,18 @@ include '../../backend/employer/application_detail.php';
             <iframe src="../../uploads/files/<?= htmlspecialchars($value['cv_path']) ?>" width="100%" height="600px"></iframe>
         </div>
 
-        <div class="action">
-            <?php if($value['status'] === 'Pending') { ?>
+        <?php if($value['status'] === 'Pending') { ?>
+        
+            <div class="action">
+                <button onclick="statusChange('Accepted', <?= $id ?>, <?= $job_id ?>)" class="button">Accept</button>
+                <button onclick="statusChange('Rejected', <?= $id ?>, <?= $job_id ?>)" class="button">Reject</button>
+            </div>
 
-                <button onclick="statusChange('Accepted',<?= $id ?>)" class="button">Accept</button>
-                <button onclick="statusChange('Rejected',<?= $id ?>)" class="button">Reject</button>
-
-            <?php } else if($value['status'] === 'Accepted') { ?>
-
-                <button onclick="statusChange('Rejected',<?= $id ?>)" class="button">Reject</button>
-                <button onclick="statusChange('Pending',<?= $id ?>)" class="button">Pending</button>
-
-            <?php } else if($value['status'] === 'Rejected') { ?>
-
-                <button onclick="statusChange('Accepted',<?= $id ?>)" class="button">Accept</button>
-                <button onclick="statusChange('Pending',<?= $id ?>)" class="button">Pending</button>
-
-            <?php } ?>
-        </div>
+        <?php } ?>
     </div>
     <script>
-        function statusChange(action, id){
-            window.location.href = "application_detail.php?id="+id+"&action="+action;
+        function statusChange(action, id, job_id){
+            window.location.href = "application_detail.php?id="+id+"&action="+action+"&job_id="+job_id;
         }
     </script>
 </body>

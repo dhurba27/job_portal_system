@@ -16,14 +16,26 @@
         $_SESSION['email'] = $email;
     
         if($result -> num_rows > 0){
+
             $value = $result -> fetch_assoc();
             if(password_verify($password, $value['password'])){
+
                 unset($_SESSION['email']);
                 $_SESSION['user_id'] = $value['user_id'];
                 $_SESSION['user_role'] = $value['role'];
+
                 if($value['role'] === 'user') {
+
+                    $sql = $conn -> prepare('select photo from profiles where user_id = ?');
+                    $sql -> bind_param('i', $value['user_id']);
+                    $sql -> execute();
+                    $image_result = $sql -> get_result();
+                    $image_value = $image_result -> fetch_assoc();
+                    $sql -> close();
+                    $_SESSION['photo'] = $image_value['photo'];
                     header('Location: ../user/user_dashboard.php');
                     exit();
+                    
                 } else if ($value['role'] === 'employer') {
                     header('Location: ../employer/employer_dashboard.php');
                     exit();

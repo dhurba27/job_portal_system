@@ -17,13 +17,13 @@ create table Jobs (
     job_type varchar(255) not null,
     job_description text not null, 
     job_requirement text not null,
-    salary varchar(255) DEFAULT 'Not Available',
+    salary varchar(255) DEFAULT 'Not available',
     deadline date not null, 
     image varchar(255), 
     posted_on timestamp DEFAULT CURRENT_TIMESTAMP,
     created_by int not null,
     status enum('Active', 'Suspended', 'Closed', 'Expired', 'Draft') default 'Draft', 
-    foreign key(created_by) references Users(user_id)
+    foreign key(created_by) references Users(user_id) on delete cascade
 );
 
 create table Application (
@@ -35,10 +35,10 @@ create table Application (
     cv_path varchar(255) not null,
     status enum('Pending', 'Approved', 'Rejected') default 'Pending', 
     applied_on timestamp DEFAULT CURRENT_TIMESTAMP, 
-    applied_by int not null,
+    applied_by int,
     job_id int not null, 
-    foreign key(applied_by) references Users(user_id), 
-    foreign key(job_id) references Jobs(job_id)
+    foreign key(applied_by) references Users(user_id) on delete set null, 
+    foreign key(job_id) references Jobs(job_id) on delete cascade
 );
 
 CREATE TABLE profiles (
@@ -47,6 +47,6 @@ CREATE TABLE profiles (
     bio TEXT,
     address VARCHAR(255),
     contact VARCHAR(20),
-    photo VARCHAR(255),
+    photo VARCHAR(255) default 'default.jpg',
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );

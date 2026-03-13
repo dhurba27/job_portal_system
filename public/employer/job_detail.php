@@ -53,6 +53,10 @@ include '../../backend/employer/job_detail.php';
                 <?= nl2br(htmlspecialchars($value['job_requirement'])) ?>
             </p>
         </div>
+
+        <div>
+            <b>Salary:</b> <?= htmlspecialchars($value['salary']) ?>
+        </div>
         
         <div class="button_section">
             

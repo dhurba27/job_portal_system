@@ -39,7 +39,7 @@ include '../../backend/user/edit_profile.php';
 
         <div>
             <label class="label" for="contact">Contact</label>
-            <input class="input" type="text" name="contact" id="contact" value="<?= htmlspecialchars($profile['contact'] ?? '') ?>" required>
+            <input class="input" type="tel" name="contact" id="contact" value="<?= htmlspecialchars($profile['contact'] ?? '') ?>" required>
         </div>
 
         <button type="submit" class="profile_edit_button">
